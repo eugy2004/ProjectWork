@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class GridNode : MonoBehaviour
 {
@@ -14,12 +15,30 @@ public class GridNode : MonoBehaviour
     // Lista dei nodi adiacenti
     public List<GridNode> linkedNodes = new List<GridNode>();
 
+    private Renderer gridnodeRenderer;
+
+    private Color originalColor;
+
+    private GameManager gameManager;
+
+    private GameObject player; 
+
     private void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        player = GameObject.Find("Player");
+        gridnodeRenderer = GetComponent<Renderer>();
+        originalColor = gridnodeRenderer.material.color;
         state = GridNodeState.FREE; // Imposta lo stato iniziale
+
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
+    {
+
+    }
+
+    /*private void OnCollisionEnter(Collision collision)
     {
         // Verifica se il layer dell'oggetto in collisione è "Player"
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -55,5 +74,25 @@ public class GridNode : MonoBehaviour
                 }
             }
         }
+    }*/
+
+    private void OnMouseEnter()
+    {
+        if (gameObject.transform.position == gameManager.GetClosestNode(player.transform.position).position)
+        {
+            foreach (GridNode linkedNode in linkedNodes)
+            {
+                Renderer renderer = linkedNode.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    renderer.material.SetColor("_BaseColor", Color.yellow);
+                }
+            }
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        gridnodeRenderer.material.SetColor("_BaseColor", originalColor);
     }
 }

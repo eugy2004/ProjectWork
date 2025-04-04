@@ -10,6 +10,8 @@ public class GridManager : MonoBehaviour
 
     public GridNode[,] gridMatrix;
 
+    public List<GameObject> gridNodesList = new List<GameObject>();
+
     // Inizializzo la griglia
     public void InitGrid()
     {
@@ -34,6 +36,7 @@ public class GridManager : MonoBehaviour
 
                 // Associa il GridManager al nodo
                 tNode.gridManager = this;
+                gridNodesList.Add(tNode.gameObject);
             }
         }
 

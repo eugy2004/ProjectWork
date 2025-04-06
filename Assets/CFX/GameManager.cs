@@ -17,10 +17,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Transform closestNode = GetClosestNode(player.position);
+        //Transform closestNode = GetClosestNode(player.position);
+
     }
 
-    public Transform GetClosestNode(Vector3 playerPosition)
+    /*public Transform GetClosestNode(Vector3 playerPosition)
     {
         if (gridManager == null || gridManager.gridNodesList == null || gridManager.gridNodesList.Count == 0)
         {
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         }
 
         return closestNode;
-    }
+    }*/
 
 
 

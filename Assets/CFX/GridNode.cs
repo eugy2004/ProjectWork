@@ -21,12 +21,12 @@ public class GridNode : MonoBehaviour
 
     private GameManager gameManager;
 
-    private GameObject player; 
+    private PlayerMove playerMove; 
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        player = GameObject.Find("Player");
+        playerMove = GameObject.Find("Player").GetComponent<PlayerMove>();
         gridnodeRenderer = GetComponent<Renderer>();
         originalColor = gridnodeRenderer.material.color;
         state = GridNodeState.FREE; // Imposta lo stato iniziale
@@ -35,7 +35,7 @@ public class GridNode : MonoBehaviour
 
     private void Update()
     {
-
+        OnPlayerOn();
     }
 
     /*private void OnCollisionEnter(Collision collision)
@@ -78,7 +78,7 @@ public class GridNode : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (gameObject.transform.position == gameManager.GetClosestNode(player.transform.position).position)
+        /*if (gameObject.transform.position == gameManager.GetClosestNode(player.transform.position).position)
         {
             foreach (GridNode linkedNode in linkedNodes)
             {
@@ -88,11 +88,27 @@ public class GridNode : MonoBehaviour
                     renderer.material.SetColor("_BaseColor", Color.yellow);
                 }
             }
-        }
+        }*/
     }
 
     private void OnMouseExit()
     {
         gridnodeRenderer.material.SetColor("_BaseColor", originalColor);
+    }
+
+    public void OnPlayerOn()
+    {
+        if (gameObject == playerMove.OnGridNode())
+        {
+            foreach (GridNode linkedNode in linkedNodes)
+            {
+                Renderer renderer = linkedNode.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    Debug.Log("Coloro questo gridnode di giallo");
+                    renderer.material.color = Color.yellow;
+                }
+            }
+        }
     }
 }

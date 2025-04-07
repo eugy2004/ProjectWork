@@ -16,11 +16,12 @@ public class PlayerMove : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Vector3 mouseWorldPos;
+        Transform trHitObj;
 
-        if (Physics.Raycast(ray, out hit, 1000f))
+        if (Physics.Raycast(ray, out hit, 1000f)  && Input.GetMouseButtonDown(0))
         {
-            mouseWorldPos = hit.point;
+            trHitObj = hit.transform;
+            transform.position = trHitObj.position + Vector3.up;
         }
         Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.white);
     }

@@ -14,6 +14,8 @@ public class GridNode : MonoBehaviour
 
     // Lista dei nodi adiacenti
     public List<GridNode> linkedNodes = new List<GridNode>();
+    
+    public List<GridNode> linkedDiagonalNodes = new List<GridNode>();
 
     private Renderer gridnodeRenderer;
 
@@ -103,6 +105,16 @@ public class GridNode : MonoBehaviour
             foreach (GridNode linkedNode in linkedNodes)
             {
                 Renderer renderer = linkedNode.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    Debug.Log("Coloro questo gridnode di giallo");
+                    renderer.material.color = Color.yellow;
+                }
+            }
+            
+            foreach (GridNode linkedDiagonalNode in linkedDiagonalNodes)
+            {
+                Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
                 if (renderer != null)
                 {
                     Debug.Log("Coloro questo gridnode di giallo");

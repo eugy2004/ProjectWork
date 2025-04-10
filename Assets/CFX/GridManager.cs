@@ -40,19 +40,34 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        // Scorro la griglia per assegnare i linked nodes
         for (int i = 0; i < righe; i++)
         {
             for (int j = 0; j < colonne; j++)
             {
-                if (i > 0)
+                
+                if (i > 0) 
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i - 1, j]);
-                if (i < righe - 1)
+
+                if (i < righe - 1) 
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i + 1, j]);
-                if (j > 0)
+
+                if (j > 0) 
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i, j - 1]);
-                if (j < colonne - 1)
+
+                if (j < colonne - 1) 
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i, j + 1]);
+
+                if (i > 0 && j > 0)
+                    gridMatrix[i, j].linkedDiagonalNodes.Add(gridMatrix[i - 1, j - 1]);
+
+                if (i > 0 && j < colonne - 1)
+                    gridMatrix[i, j].linkedDiagonalNodes.Add(gridMatrix[i - 1, j + 1]);
+
+                if (i < righe - 1 && j > 0)
+                    gridMatrix[i, j].linkedDiagonalNodes.Add(gridMatrix[i + 1, j - 1]);
+
+                if (i < righe - 1 && j < colonne - 1)
+                    gridMatrix[i, j].linkedDiagonalNodes.Add(gridMatrix[i + 1, j + 1]);
             }
         }
     }

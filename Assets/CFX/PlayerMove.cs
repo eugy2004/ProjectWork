@@ -5,7 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     private List<GridNode> validNodes = new List<GridNode>(); // Nodi validi (colorati di giallo)
 
-    private void FixedUpdate()
+    private void Update()
     {
         CameraRayCast(); // Gestisce il movimento verso un nodo valido
         OnGridNode();    // Ottiene il nodo attuale

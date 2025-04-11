@@ -20,6 +20,10 @@ public class Character
 
     }
 
+    public void OnSelect()
+    {
+        //quando clicchi sul personaggio mostra le sue stat
+    }
 }
 
 

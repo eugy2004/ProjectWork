@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Player
 {
-    public List<Character> selectedCharacters;
+    public List<Character> characters;
+
+    public void ActionsUpdate()
+    {
+
+    }
 }

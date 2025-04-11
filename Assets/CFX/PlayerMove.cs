@@ -24,7 +24,6 @@ public class PlayerMove : MonoBehaviour
             {
                 // Muovi il player sopra il nodo cliccato
                 transform.position = clickedNode.transform.position + Vector3.up;
-                Debug.Log("Player mosso su un nodo valido!");
             }
             else
             {

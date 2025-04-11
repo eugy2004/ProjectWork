@@ -1,9 +1,17 @@
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Player player1, player2;     //per avere informazioni riguardanti il player che sta svolgendo il suo turno
+    public GameObject instance;
+
+
+    private List<Player> players;     //per avere informazioni riguardanti il player che sta svolgendo il suo turnos
+    private int activePlayer;
+
+    private bool turnEnded;
     private byte moveActions { get; set; }
     private byte attackActions { get; set; }
     public enum GameState { Moneta, Placement, Battle, Victory }
@@ -14,15 +22,34 @@ public class GameManager : MonoBehaviour
     {
         moveActions = 3;
         attackActions = 3;
+        activePlayer = 0;
+        players.Add(new Player());
+        players.Add(new Player());
     }
 
     private void Update()
     {
-        StateUpdate();
+        TurnHandler();
+        ActionsUpdate();
     }
 
 
     //funzioni custom
+    private void TurnHandler()
+    {
+        if ((moveActions == 0 && attackActions == 0) || turnEnded)       //possibilmente da cambiare
+        {
+            activePlayer = (activePlayer + 1) % 2;
+            moveActions = 3;
+            attackActions = 3;
+        }
+    }
+
+    private void ActionsUpdate()
+    {
+        players[activePlayer].ActionsUpdate();
+    }
+
     public void ChangeState(GameState newState)
     {
         ExitState();
@@ -37,7 +64,12 @@ public class GameManager : MonoBehaviour
 
     private void EnterState()
     {
-
+        switch (currentState) 
+        {
+            case GameState.Battle:
+                instance.SetActive(true);
+                break;
+        }
     }
 
     private void StateUpdate()

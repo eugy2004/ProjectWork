@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class GridManager : MonoBehaviour
 {
@@ -125,6 +126,7 @@ public class GridManager : MonoBehaviour
         }
 
         Debug.Log("Popolamento nodi diagonali completato.");
+        EditorUtility.SetDirty(this);
     }
 
 }

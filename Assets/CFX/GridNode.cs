@@ -19,6 +19,8 @@ public class GridNode : MonoBehaviour
 
     private Renderer gridnodeRenderer;
 
+    public Material originalMaterial;
+
     private Color originalColor;
 
     private GameManager gameManager;
@@ -40,58 +42,7 @@ public class GridNode : MonoBehaviour
         OnPlayerOn();
     }
 
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        // Verifica se il layer dell'oggetto in collisione è "Player"
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            state = GridNodeState.PLAYERON;
-
-            // Colora i nodi adiacenti di giallo
-            foreach (GridNode linkedNode in linkedNodes)
-            {
-                Renderer renderer = linkedNode.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.color = Color.yellow;
-                }
-            }
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        // Verifica se il layer dell'oggetto che ha smesso di collidere è "Player"
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            state = GridNodeState.FREE;
-
-            // Torna al colore verde per i nodi adiacenti
-            foreach (GridNode linkedNode in linkedNodes)
-            {
-                Renderer renderer = linkedNode.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.color = Color.green;
-                }
-            }
-        }
-    }*/
-
-    private void OnMouseEnter()
-    {
-        /*if (gameObject.transform.position == gameManager.GetClosestNode(player.transform.position).position)
-        {
-            foreach (GridNode linkedNode in linkedNodes)
-            {
-                Renderer renderer = linkedNode.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    renderer.material.SetColor("_BaseColor", Color.yellow);
-                }
-            }
-        }*/
-    }
+    
 
     private void OnMouseExit()
     {
@@ -99,28 +50,46 @@ public class GridNode : MonoBehaviour
     }
 
     public void OnPlayerOn()
+{
+    if (gameObject == playerMove.OnGridNode())
     {
-        if (gameObject == playerMove.OnGridNode())
+        // Ripristina i colori di tutti i nodi precedenti
+        foreach (GridNode nodo in playerMove.GetValidNodes())
         {
-            foreach (GridNode linkedNode in linkedNodes)
+            Renderer renderer = nodo.GetComponent<Renderer>();
+            if (renderer != null)
             {
-                Renderer renderer = linkedNode.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    Debug.Log("Coloro questo gridnode di giallo");
-                    renderer.material.color = Color.yellow;
-                }
-            }
-            
-            foreach (GridNode linkedDiagonalNode in linkedDiagonalNodes)
-            {
-                Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
-                if (renderer != null)
-                {
-                    Debug.Log("Coloro questo gridnode di giallo");
-                    renderer.material.color = Color.yellow;
-                }
+                    renderer.material = originalMaterial; // Torna al colore originale
             }
         }
+
+        // Lista temporanea per i nuovi nodi validi
+        List<GridNode> nuoviNodiValidi = new List<GridNode>();
+
+        // Colora i nodi adiacenti di giallo
+        foreach (GridNode linkedNode in linkedNodes)
+        {
+            Renderer renderer = linkedNode.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = Color.yellow; // Colora di giallo
+                nuoviNodiValidi.Add(linkedNode); // Aggiungi alla lista dei validi
+            }
+        }
+
+        // Colora i nodi diagonali di giallo
+        foreach (GridNode linkedDiagonalNode in linkedDiagonalNodes)
+        {
+            Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = Color.yellow; // Colora di giallo
+                nuoviNodiValidi.Add(linkedDiagonalNode); // Aggiungi alla lista dei validi
+            }
+        }
+
+        // Aggiorna i nodi validi nel player
+        playerMove.UpdateValidNodes(nuoviNodiValidi);
     }
+}
 }

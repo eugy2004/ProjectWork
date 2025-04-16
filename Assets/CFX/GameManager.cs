@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,24 @@ public class GameManager : MonoBehaviour
     public enum GameState { Moneta, Placement, Pesca, PlayerAction, Victory }    //aggiungo la fine del turno?
     private GameState currentState { get; set; }
 
+    public GameObject prefabWarrior;
+
+    public GameObject prefabArcher;
+
+    public GameObject prefabWizard;
+
+    public Troop troop;
+
+
+
     //funzioni di Unity
     void Start()
     {
         moveActions = 3;
         attackActions = 3;
         activePlayer = 0;
-        players.Add(new Player());       //andrà inserita una lista di personaggi durante la fase di selezione
-        players.Add(new Player());
+        /*players.Add(new Player());       //andrà inserita una lista di personaggi durante la fase di selezione
+        players.Add(new Player());*/
     }
 
     private void Update()
@@ -83,5 +94,38 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Bella per Filo");
                 break;
         }
+    }
+
+    public void DeployTroop(int IdTroop)
+    {
+        switch (IdTroop)
+        {
+            case 0:
+                DeployWarrior();
+                break;
+            case 1:
+                DeployArcher();
+                break;
+            case 2:
+                DeployWizard();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void DeployWarrior()
+    {
+        Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
+    }
+    
+    public void DeployArcher()
+    {
+        Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
+    }
+    
+    public void DeployWizard()
+    {
+        Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
     }
 }

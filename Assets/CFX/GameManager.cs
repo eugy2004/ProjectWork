@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject instance;
+    public GameObject instance;       //Il gameObject che contiene il playerMove
 
 
     private List<Player> players;     //per avere informazioni riguardanti il player che sta svolgendo il suo turnos
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private bool turnEnded;
     private byte moveActions { get; set; }
     private byte attackActions { get; set; }
-    public enum GameState { Moneta, Placement, Battle, Victory }
+    public enum GameState { Moneta, Placement, Pesca, PlayerAction, Victory }    //aggiungo la fine del turno?
     private GameState currentState { get; set; }
 
     //funzioni di Unity
@@ -23,19 +23,21 @@ public class GameManager : MonoBehaviour
         moveActions = 3;
         attackActions = 3;
         activePlayer = 0;
-        players.Add(new Player());
+        players.Add(new Player());       //andrà inserita una lista di personaggi durante la fase di selezione
         players.Add(new Player());
     }
 
     private void Update()
     {
-        TurnHandler();
+        //TurnHandler();
+
+
         ActionsUpdate();
     }
 
 
     //funzioni custom
-    private void TurnHandler()
+    private void TurnHandler()      //faccio il cambio turno con un evento o così?
     {
         if ((moveActions == 0 && attackActions == 0) || turnEnded)       //possibilmente da cambiare
         {
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         switch (currentState) 
         {
-            case GameState.Battle:
+            case GameState.PlayerAction:
                 instance.SetActive(true);
                 break;
         }
@@ -82,8 +84,12 @@ public class GameManager : MonoBehaviour
             case GameState.Placement:
                 Debug.Log("ciao Diego");
                 break;
+
+            case GameState.Pesca:
+                Debug.Log("Rob, scelgo te!");
+                break;
                 
-            case GameState.Battle:
+            case GameState.PlayerAction:
                 break;
 
             case GameState.Victory:

@@ -29,15 +29,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //TurnHandler();
-
-
-        ActionsUpdate();
+        SwitchTurn();
     }
 
 
     //funzioni custom
-    private void TurnHandler()      //faccio il cambio turno con un evento o così?
+    private void SwitchTurn()      //faccio il cambio turno con un evento o così?
     {
         if ((moveActions == 0 && attackActions == 0) || turnEnded)       //possibilmente da cambiare
         {
@@ -45,11 +42,6 @@ public class GameManager : MonoBehaviour
             moveActions = 3;
             attackActions = 3;
         }
-    }
-
-    private void ActionsUpdate()
-    {
-        players[activePlayer].ActionsUpdate();
     }
 
     public void ChangeState(GameState newState)

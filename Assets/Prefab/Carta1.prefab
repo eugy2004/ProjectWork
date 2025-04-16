@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3338003357921507289}
   - component: {fileID: 4103023492704134211}
   - component: {fileID: 153099723103371974}
+  - component: {fileID: 5181679496660394375}
   m_Layer: 0
   m_Name: Carta1
   m_TagString: Untagged
@@ -108,3 +109,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5181679496660394375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8960894345311643908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69674741eba7d0e49a81c168b879494c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 2100000, guid: ad8139e075e50de4cbfcea21803f7b3b, type: 2}
+  highlightedMaterial: {fileID: 2100000, guid: 691a26dc7692b194c86d3fa7a9bfd3e2, type: 2}

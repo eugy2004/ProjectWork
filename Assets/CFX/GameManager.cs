@@ -58,12 +58,7 @@ public class GameManager : MonoBehaviour
 
     private void EnterState()
     {
-        switch (currentState) 
-        {
-            case GameState.PlayerAction:
-                instance.SetActive(true);
-                break;
-        }
+
     }
 
     private void StateUpdate()

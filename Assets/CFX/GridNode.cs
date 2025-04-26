@@ -53,6 +53,9 @@ public class GridNode : MonoBehaviour
 {
     if (gameObject == playerMove.OnGridNode())
     {
+
+        state = GridNodeState.PLAYERON;
+
         // Ripristina i colori di tutti i nodi precedenti
         foreach (GridNode nodo in playerMove.GetValidNodes())
         {
@@ -90,6 +93,10 @@ public class GridNode : MonoBehaviour
 
         // Aggiorna i nodi validi nel player
         playerMove.UpdateValidNodes(nuoviNodiValidi);
+    }
+    else
+    {
+            state = GridNodeState.FREE;
     }
 }
 }

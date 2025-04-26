@@ -36,7 +36,6 @@ public class PlayerMove : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.green);
 
         if (Physics.Raycast(ray, out hit, 1000f))
         {

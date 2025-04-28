@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7900104999015351468}
   - component: {fileID: 5732438086018585372}
   - component: {fileID: -4543749416472512110}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,5 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4165e6e5c51d5ee479497c94831be40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   isDeploying: 0
+  renderer: {fileID: 0}
+  collider: {fileID: 0}
+  lastDeployPosition: {x: 0, y: 0, z: 0}

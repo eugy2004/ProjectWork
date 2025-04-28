@@ -45,17 +45,17 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < colonne; j++)
             {
-                
-                if (i > 0) 
+
+                if (i > 0)
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i - 1, j]);
 
-                if (i < righe - 1) 
+                if (i < righe - 1)
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i + 1, j]);
 
-                if (j > 0) 
+                if (j > 0)
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i, j - 1]);
 
-                if (j < colonne - 1) 
+                if (j < colonne - 1)
                     gridMatrix[i, j].linkedNodes.Add(gridMatrix[i, j + 1]);
 
                 if (i > 0 && j > 0)

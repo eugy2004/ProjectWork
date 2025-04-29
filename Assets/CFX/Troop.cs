@@ -7,10 +7,11 @@ using UnityEngine.EventSystems;
 public class Troop : MonoBehaviour
 {
     private GameManager gameManager;
-
     private GridNode gridNode;
 
     public bool isDeploying;
+
+    public static bool AnyDeploying = false;
 
     public Renderer renderer;
 
@@ -25,13 +26,17 @@ public class Troop : MonoBehaviour
         renderer = gameObject.GetComponent<Renderer>();
         collider = gameObject.GetComponent<Collider>();
 
+        AnyDeploying = true;
         isDeploying = true;
     }
 
     private void Update()
     {
-        CameraRayCastDeploy();
-        ConfirmDeploy();
+        if (isDeploying)
+        {
+            CameraRayCastDeploy();
+            ConfirmDeploy();
+        }
     }
 
     public void CameraRayCastDeploy()
@@ -41,6 +46,8 @@ public class Troop : MonoBehaviour
         int layerMask = LayerMask.GetMask("GridNode");
         float offset = 2f;
         GridNode deployingGridNode;
+
+        renderer.enabled = false;
 
         if (Physics.Raycast(ray, out hit, 1000f, layerMask) && isDeploying)
         {
@@ -61,15 +68,17 @@ public class Troop : MonoBehaviour
 
     public void ConfirmDeploy()
     {
-        if (isDeploying && Input.GetMouseButtonDown(0))
+        if (isDeploying && Input.GetMouseButtonDown(0) && renderer.enabled)
         {
             isDeploying = false;
+            AnyDeploying = false;
             renderer.enabled = true;
             transform.position = lastDeployPosition;
         }
         if (isDeploying && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)))
         {
             Destroy(gameObject);
+            AnyDeploying = false;
         }
     }
 }

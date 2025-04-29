@@ -18,6 +18,8 @@ public class ButtonDeployTroop : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        gameManager.DeployTroop(IDTroop);
+        if (!Troop.AnyDeploying) {
+            gameManager.DeployTroop(IDTroop);
+        }
     }
 }

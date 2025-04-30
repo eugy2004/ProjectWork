@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<Troop> player1Troops, player2Troops;    // le truppe del primo e del secondo player
-    private List<Troop> activeTroops;
+    private List<GameObject> player1Troops, player2Troops;    // le truppe del primo e del secondo player
     private byte playerID;            // serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
 
     private byte MoveActions { get; set; }
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        StateUpdate();
     }
 
 
@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.PlayerAction:
+                TroopSelectionRaycast();
                 break;
 
             case GameState.Victory:
@@ -89,12 +90,49 @@ public class GameManager : MonoBehaviour
         switch (playerID)
         {
             case 1:
-                activeTroops = player1Troops;
+                HandleTroopActivation(player2Troops, player1Troops);
                 break;
 
             case 2:
-                activeTroops = player2Troops;
+                HandleTroopActivation(player1Troops, player2Troops);
                 break;
+        }
+    }
+
+    private void HandleTroopActivation(List<GameObject> deactivatedTroops, List<GameObject> activatedTroops)
+    {
+        foreach (GameObject troop in deactivatedTroops)
+        {
+            PlayerMove troopMove = troop.GetComponent<PlayerMove>();
+            troopMove.isInTurn = false;
+        }
+
+        foreach (GameObject troop in activatedTroops)
+        {
+            PlayerMove troopMove = troop.GetComponent<PlayerMove>();
+            troopMove.isInTurn = true;
+        }
+    }
+
+    private void TroopSelectionRaycast()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        LayerMask characterMask = LayerMask.GetMask("Character");
+
+        // Controlla il click e vede se colpisce un Character
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, characterMask))
+        {
+            // qua possiamo inserire il display delle statistiche del personaggio selezionato
+
+            GameObject hitCharacter = hit.transform.gameObject;
+            PlayerMove charactersel = hitCharacter.GetComponent<PlayerMove>();
+
+            if (charactersel.isInTurn)      // se il personaggio appartiene ai personaggi del giocatore corrente
+            {
+                charactersel.isSelected = true;
+            }
         }
     }
 

@@ -2,100 +2,107 @@ using UnityEngine;
 
 public class Carta1 : MonoBehaviour
 {
-    private bool isRaycastActive = false; // Flag per tenere traccia dello stato del Raycast
+    private bool isRaycastActive = false; // Indica se l'evidenziazione è attiva
     private Ray ray;
     private RaycastHit hit;
 
-    public Material originalMaterial; // Materiale originale del nodo
-    public Material highlightedMaterial; // Materiale per evidenziare il nodo
-    private GridNode lastHighlightedNode; // Nodo evidenziato precedentemente
+    private GridNode lastHighlightedNode; // Nodo precedentemente evidenziato
+    private PlayerMove playerMove; // Riferimento al player
+
+    [Header("Materiale per evidenziazione")]
+    public Material highlightMaterial; // Materiale rosso da assegnare nell'Inspector
+
+    void Start()
+    {
+        // Ottieni il riferimento al player
+        playerMove = GameObject.FindObjectOfType<PlayerMove>();
+    }
 
     void Update()
     {
-        // Controlla se il tasto sinistro del mouse è stato premuto
-        if (Input.GetMouseButtonDown(0)) // Tasto sinistro del mouse
+        // Controlla se l'oggetto (carta) è stato cliccato per attivare/disattivare il Raycast
+        if (Input.GetMouseButtonDown(0))
         {
-            if (isRaycastActive)
+            Ray clickRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(clickRay, out RaycastHit clickHit))
             {
-                // Disattiva il Raycast
-                isRaycastActive = false;
-                Debug.Log("Raycast disattivato");
-
-                // Resetta l'ultimo nodo evidenziato se presente
-                if (lastHighlightedNode != null)
+                if (clickHit.collider.gameObject == gameObject)
                 {
-                    Renderer nodeRenderer = lastHighlightedNode.GetComponent<Renderer>();
-                    if (nodeRenderer != null)
-                    {
-                        nodeRenderer.material = originalMaterial; // Ripristina il materiale originale
-                    }
-                    lastHighlightedNode = null;
-                }
-            }
-            else
-            {
-                // Esegui un Raycast quando la carta viene cliccata
-                Ray clickRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(clickRay, out RaycastHit clickHit))
-                {
-                    if (clickHit.collider != null && clickHit.collider.gameObject == gameObject)
-                    {
-                        // Attiva il Raycast continuo
-                        isRaycastActive = true;
-                        Debug.Log("Raycast attivato sulla carta: " + gameObject.name);
-                    }
+                    isRaycastActive = !isRaycastActive; // Attiva/disattiva la modalità Raycast
+                    Debug.Log(isRaycastActive ? "Evidenziazione attivata" : "Evidenziazione disattivata");
                 }
             }
         }
 
-        // Se il Raycast è attivo, continua a calcolarlo
+        // Se l'evidenziazione è attiva, gestisci il passaggio del cursore sui nodi
         if (isRaycastActive)
         {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            HighlightNodeUnderCursor();
 
-            if (Physics.Raycast(ray, out hit, 1000f))
+            // Controlla se il mouse è premuto per interagire con il nodo
+            if (Input.GetMouseButtonDown(0))
             {
-                // Ottieni il nodo attualmente sotto il Raycast
-                GridNode currentNode = hit.transform.GetComponent<GridNode>();
-                if (currentNode != null)
+                HandleNodeClick();
+            }
+        }
+    }
+
+    private void HighlightNodeUnderCursor()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            GridNode nodeUnderCursor = hit.transform.GetComponent<GridNode>();
+
+            if (nodeUnderCursor != null && nodeUnderCursor != lastHighlightedNode)
+            {
+                ResetNodeColor(); // Ripristina il colore dell'ultimo nodo evidenziato
+
+                Renderer renderer = nodeUnderCursor.GetComponent<Renderer>();
+                if (renderer != null)
                 {
-                    // Se il nodo è diverso dall'ultimo evidenziato
-                    if (currentNode != lastHighlightedNode)
-                    {
-                        // Resetta l'ultimo nodo evidenziato
-                        if (lastHighlightedNode != null)
-                        {
-                            Renderer lastRenderer = lastHighlightedNode.GetComponent<Renderer>();
-                            if (lastRenderer != null)
-                            {
-                                lastRenderer.material = originalMaterial; // Ripristina il materiale originale
-                            }
-                        }
-
-                        // Evidenzia il nuovo nodo
-                        Renderer currentRenderer = currentNode.GetComponent<Renderer>();
-                        if (currentRenderer != null)
-                        {
-                            currentRenderer.material = highlightedMaterial; // Imposta il materiale evidenziato
-                        }
-
-                        lastHighlightedNode = currentNode; // Aggiorna il nodo evidenziato
-                    }
+                    renderer.material = highlightMaterial; // Cambia il materiale in rosso
                 }
+
+                lastHighlightedNode = nodeUnderCursor; // Aggiorna il nodo evidenziato
+            }
+        }
+        else
+        {
+            ResetNodeColor(); // Ripristina il colore se nessun nodo è sotto il cursore
+        }
+    }
+
+    private void HandleNodeClick()
+    {
+        if (lastHighlightedNode != null)
+        {
+            // Verifica se il nodo cliccato è occupato dal player
+            GameObject currentPlayerNode = playerMove.OnGridNode();
+            if (currentPlayerNode == lastHighlightedNode.gameObject)
+            {
+                // Fai scomparire il player
+                playerMove.gameObject.SetActive(false);
+                Debug.Log("Il player è stato eliminato!");
             }
             else
             {
-                // Se il Raycast non colpisce nulla, resettare l'ultimo nodo evidenziato
-                if (lastHighlightedNode != null)
-                {
-                    Renderer nodeRenderer = lastHighlightedNode.GetComponent<Renderer>();
-                    if (nodeRenderer != null)
-                    {
-                        nodeRenderer.material = originalMaterial; // Ripristina il materiale originale
-                    }
-                    lastHighlightedNode = null;
-                }
+                Debug.Log("Nodo vuoto, nessuna azione eseguita.");
             }
+        }
+    }
+
+    private void ResetNodeColor()
+    {
+        if (lastHighlightedNode != null)
+        {
+            Renderer renderer = lastHighlightedNode.GetComponent<Renderer>();
+            if (renderer != null && lastHighlightedNode.originalMaterial != null)
+            {
+                renderer.material = lastHighlightedNode.originalMaterial; // Ripristina il materiale originale
+            }
+            lastHighlightedNode = null;
         }
     }
 }

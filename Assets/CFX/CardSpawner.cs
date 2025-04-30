@@ -42,6 +42,6 @@ public class RandomCardSpawner : MonoBehaviour
         Instantiate(carte[randomIndex], spawnPosition, Quaternion.identity);
 
         // Incrementa la coordinata X della posizione di spawn
-        spawnPosition.z += 5;
+        spawnPosition.z += 2;
     }
 }

@@ -1,14 +1,9 @@
-using JetBrains.Annotations;
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject instance;       //Il gameObject che contiene il playerMove
-
-
     private List<Player> players;     //per avere informazioni riguardanti il player che sta svolgendo il suo turnos
     private int activePlayer;
 
@@ -26,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public Troop troop;
 
-
+    private PlayerMove activePlayerMove;
 
     //funzioni di Unity
     void Start()
@@ -74,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     private void StateUpdate()
     {
-        switch (currentState) 
+        switch (currentState)
         {
             case GameState.Moneta:
                 break;
@@ -86,7 +81,7 @@ public class GameManager : MonoBehaviour
             case GameState.Pesca:
                 Debug.Log("Rob, scelgo te!");
                 break;
-                
+
             case GameState.PlayerAction:
                 break;
 
@@ -116,16 +111,34 @@ public class GameManager : MonoBehaviour
 
     public void DeployWarrior()
     {
-        Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
-    
+
     public void DeployArcher()
     {
-        Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
-    
+
     public void DeployWizard()
     {
-        Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
 }

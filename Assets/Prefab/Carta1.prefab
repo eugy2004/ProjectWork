@@ -121,5 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69674741eba7d0e49a81c168b879494c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMaterial: {fileID: 2100000, guid: ad8139e075e50de4cbfcea21803f7b3b, type: 2}
-  highlightedMaterial: {fileID: 2100000, guid: 691a26dc7692b194c86d3fa7a9bfd3e2, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 691a26dc7692b194c86d3fa7a9bfd3e2, type: 2}

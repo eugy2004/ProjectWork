@@ -1,17 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject instance;       //Il gameObject che contiene il playerMove
-    private List<Player> players;     //per avere informazioni riguardanti il player che sta svolgendo il suo turnos
-    private int activePlayer;
+    private List<Troop> player1Troops, player2Troops;    // le truppe del primo e del secondo player
+    private List<Troop> activeTroops;
+    private byte playerID;            // serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
 
-    private bool turnEnded;
-    private byte moveActions { get; set; }
-    private byte attackActions { get; set; }
-    public enum GameState { Moneta, Placement, Pesca, PlayerAction, Victory }    //aggiungo la fine del turno?
-    private GameState currentState { get; set; }
+    private byte MoveActions { get; set; }
+    private byte AttackActions { get; set; }
+    public enum GameState { Moneta, Placement, Pesca, PlayerAction, Victory }
+    private GameState CurrentState { get; set; }
 
     public GameObject prefabWarrior;
 
@@ -26,34 +26,20 @@ public class GameManager : MonoBehaviour
     //funzioni di Unity
     void Start()
     {
-        moveActions = 3;
-        attackActions = 3;
-        activePlayer = 0;
-        /*players.Add(new Player());       //andrà inserita una lista di personaggi durante la fase di selezione
-        players.Add(new Player());*/
+
     }
 
     private void Update()
     {
-        //SwitchTurn();
+
     }
 
 
     //funzioni custom
-    private void SwitchTurn()      //faccio il cambio turno con un evento o così?
-    {
-        if ((moveActions == 0 && attackActions == 0) || turnEnded)       //possibilmente da cambiare
-        {
-            activePlayer = (activePlayer + 1) % 2;
-            moveActions = 3;
-            attackActions = 3;
-        }
-    }
-
     public void ChangeState(GameState newState)
     {
         ExitState();
-        currentState = newState;
+        CurrentState = newState;
         EnterState();
     }
 
@@ -64,12 +50,17 @@ public class GameManager : MonoBehaviour
 
     private void EnterState()
     {
-
+        switch (CurrentState) 
+        {
+            case GameState.PlayerAction:
+                SetUpNextPlayerAction();
+                break;
+        }
     }
 
     private void StateUpdate()
     {
-        switch (currentState)
+        switch (CurrentState)
         {
             case GameState.Moneta:
                 break;
@@ -87,6 +78,22 @@ public class GameManager : MonoBehaviour
 
             case GameState.Victory:
                 Debug.Log("Bella per Filo");
+                break;
+        }
+    }
+
+    private void SetUpNextPlayerAction()
+    {
+        MoveActions = 3;
+        AttackActions = 3;
+        switch (playerID)
+        {
+            case 1:
+                activeTroops = player1Troops;
+                break;
+
+            case 2:
+                activeTroops = player2Troops;
                 break;
         }
     }

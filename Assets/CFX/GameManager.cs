@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     private byte MoveActions { get; set; }
     private byte AttackActions { get; set; }
-    public enum GameState { Moneta, Placement, Pesca, PlayerAction, Victory }
+    public enum GameState { CoinFlip, Placement, Draw, PlayerAction, Victory }
     private GameState CurrentState { get; set; }
 
     public GameObject prefabWarrior;
@@ -62,25 +62,44 @@ public class GameManager : MonoBehaviour
     {
         switch (CurrentState)
         {
-            case GameState.Moneta:
+            case GameState.CoinFlip:
                 break;
 
             case GameState.Placement:
                 Debug.Log("ciao Diego");
                 break;
 
-            case GameState.Pesca:
+            case GameState.Draw:
                 Debug.Log("Rob, scelgo te!");
                 break;
 
             case GameState.PlayerAction:
-                TroopSelectionRaycast();
+                if (CheckTurnPass())
+                {
+                    if (playerID == 1)          // determina a chi bisogna passare il turno
+                        playerID++;
+                    else
+                        playerID--;
+
+                    ChangeState(GameState.Draw);
+                }
+                ActingTroopRaycast();
                 break;
 
             case GameState.Victory:
                 Debug.Log("Bella per Filo");
                 break;
         }
+    }
+
+    private bool CheckTurnPass()                        // è nell'update perciò potrebbe consumare di più di se fosse fatto con eventi
+    {
+        if (MoveActions == 0 && AttackActions == 0)     
+        {
+            Debug.Log("Cambio turno");
+            return true;
+        }
+        return false;
     }
 
     private void SetUpNextPlayerAction()
@@ -114,7 +133,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void TroopSelectionRaycast()
+    private void ActingTroopRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

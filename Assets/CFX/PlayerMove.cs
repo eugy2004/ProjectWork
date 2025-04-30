@@ -8,6 +8,12 @@ public class PlayerMove : MonoBehaviour
     public bool isInTurn;                                     // per sapere se è il turno del suo giocatore
     public bool isSelected;                                   // per non far muovere tutti i personaggi
 
+
+    private void Awake()
+    {
+        isSelected = false;
+    }
+
     private void Update()
     {
         if (isSelected)

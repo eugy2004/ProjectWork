@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     //funzioni di Unity
     void Start()
     {
-
+        CurrentState = GameState.CoinFlip;
+        playerID = 2;
     }
 
     private void Update()
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
 
                     ChangeState(GameState.Draw);
                 }
-                ActingTroopRaycast();
+                TroopSelectionRaycast();
                 break;
 
             case GameState.Victory:
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
         switch (playerID)
         {
             case 1:
+                Debug.Log("yipee");
                 HandleTroopActivation(player2Troops, player1Troops);
                 break;
 
@@ -133,7 +135,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void ActingTroopRaycast()
+    GameObject hitCharacter;
+    private void TroopSelectionRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -143,15 +146,23 @@ public class GameManager : MonoBehaviour
         // Controlla il click e vede se colpisce un Character
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, characterMask))
         {
+            Debug.Log("Personaggio colpito");
             // qua possiamo inserire il display delle statistiche del personaggio selezionato
 
-            GameObject hitCharacter = hit.transform.gameObject;
+            hitCharacter = hit.transform.gameObject;
             PlayerMove charactersel = hitCharacter.GetComponent<PlayerMove>();
 
             if (charactersel.isInTurn)      // se il personaggio appartiene ai personaggi del giocatore corrente
             {
+                Debug.Log("Personaggio correttamente selezionato");
                 charactersel.isSelected = true;
             }
+        }
+        if (hitCharacter != null)    // per deselezionare il personaggio
+        {
+            PlayerMove charactersel = hitCharacter.GetComponent<PlayerMove>();
+            charactersel.isSelected = false;
+            hitCharacter = null;
         }
     }
 
@@ -178,6 +189,8 @@ public class GameManager : MonoBehaviour
         GameObject newPlayer = Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
         activePlayerMove = newPlayer.GetComponent<PlayerMove>();
 
+        //player1Troops.Add(newPlayer);                                  solo per test, da cambiare successivamente
+
         foreach (GridNode node in FindObjectsOfType<GridNode>())
         {
             node.SetPlayer(activePlayerMove);
@@ -189,6 +202,8 @@ public class GameManager : MonoBehaviour
         GameObject newPlayer = Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
         activePlayerMove = newPlayer.GetComponent<PlayerMove>();
 
+        //player1Troops.Add(newPlayer);
+
         foreach (GridNode node in FindObjectsOfType<GridNode>())
         {
             node.SetPlayer(activePlayerMove);
@@ -199,6 +214,8 @@ public class GameManager : MonoBehaviour
     {
         GameObject newPlayer = Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
         activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        //player1Troops.Add(newPlayer);
 
         foreach (GridNode node in FindObjectsOfType<GridNode>())
         {

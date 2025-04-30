@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public Troop troop;
 
-
+    private PlayerMove activePlayerMove;
 
     //funzioni di Unity
     void Start()
@@ -111,16 +111,34 @@ public class GameManager : MonoBehaviour
 
     public void DeployWarrior()
     {
-        Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabWarrior, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
 
     public void DeployArcher()
     {
-        Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabArcher, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
 
     public void DeployWizard()
     {
-        Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
+        GameObject newPlayer = Instantiate(prefabWizard, Vector3.zero, Quaternion.identity);
+        activePlayerMove = newPlayer.GetComponent<PlayerMove>();
+
+        foreach (GridNode node in FindObjectsOfType<GridNode>())
+        {
+            node.SetPlayer(activePlayerMove);
+        }
     }
 }

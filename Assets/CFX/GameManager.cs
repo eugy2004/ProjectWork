@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CurrentState = GameState.CoinFlip;
-        playerID = 2;
+        MoveActions = 0;
+        AttackActions = 0;
+        playerID = 2;                         // messo a due per farlo sostituire a 1 dal CheckTurnPass dato che fino al SetUpNextPlayerTurn moveAction e attackActions sono 0
     }
 
     private void Update()
@@ -136,32 +138,31 @@ public class GameManager : MonoBehaviour
     }
 
     GameObject hitCharacter;
+    public LayerMask character;
     private void TroopSelectionRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        LayerMask characterMask = LayerMask.GetMask("Character");
-
         // Controlla il click e vede se colpisce un Character
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, characterMask))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, character ))
         {
             Debug.Log("Personaggio colpito");
             // qua possiamo inserire il display delle statistiche del personaggio selezionato
 
             hitCharacter = hit.transform.gameObject;
-            PlayerMove charactersel = hitCharacter.GetComponent<PlayerMove>();
+            PlayerMove characterSel = hitCharacter.GetComponent<PlayerMove>();
 
-            if (charactersel.isInTurn)      // se il personaggio appartiene ai personaggi del giocatore corrente
+            if (characterSel.isInTurn)      // se il personaggio appartiene ai personaggi del giocatore corrente
             {
                 Debug.Log("Personaggio correttamente selezionato");
-                charactersel.isSelected = true;
+                characterSel.isSelected = true;
             }
         }
         if (hitCharacter != null)    // per deselezionare il personaggio
         {
-            PlayerMove charactersel = hitCharacter.GetComponent<PlayerMove>();
-            charactersel.isSelected = false;
+            PlayerMove characterSel = hitCharacter.GetComponent<PlayerMove>();
+            characterSel.isSelected = false;
             hitCharacter = null;
         }
     }

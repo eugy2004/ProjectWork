@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class ButtonDeployTroop : MonoBehaviour, IPointerClickHandler
 {
-
     public int IDTroop;
 
     public GameManager gameManager;
@@ -18,7 +16,8 @@ public class ButtonDeployTroop : MonoBehaviour, IPointerClickHandler
 
     public void OnLeftClick()
     {
-        if (!Troop.AnyDeploying) {
+        if (!Troop.AnyDeploying)
+        {
             gameManager.DeployTroop(IDTroop);
         }
     }

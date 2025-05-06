@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void EnterState()
     {
-        switch (CurrentState) 
+        switch (CurrentState)
         {
             case GameState.PlayerAction:
                 SetUpNextPlayerAction();
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     private bool CheckTurnPass()                        // è nell'update perciò potrebbe consumare di più di se fosse fatto con eventi
     {
-        if (MoveActions == 0 && AttackActions == 0)     
+        if (MoveActions == 0 && AttackActions == 0)
         {
             Debug.Log("Cambio turno");
             return true;
@@ -147,7 +147,7 @@ public class GameManager : MonoBehaviour
         RaycastHit hit;
 
         // Controlla il click e vede se colpisce un Character
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, character ))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, character))
         {
             Debug.Log("Personaggio colpito");
             // qua possiamo inserire il display delle statistiche del personaggio selezionato

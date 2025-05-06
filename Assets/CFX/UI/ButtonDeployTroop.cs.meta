@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 16b7c880b0a072a4b87e6f309edaadb7
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameManager: {instanceID: 0}
+  - Mazzo: {fileID: 4972457264297408379, guid: 84d9b8ec400f57c4ab7bb10765e78389, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -23,26 +23,44 @@ public class PlayerMove : MonoBehaviour
         OnGridNode();    // Ottiene il nodo attuale
     }
 
+    private List<GridNode> occupiedNodes = new List<GridNode>(); // Lista dei nodi occupati
+
     public void CameraRayCast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Controlla il click e verifica che l'oggetto cliccato sia un nodo
         if (Physics.Raycast(ray, out hit, 1000f) && Input.GetMouseButtonDown(0))
         {
             GridNode clickedNode = hit.transform.GetComponent<GridNode>();
-            if (clickedNode != null && validNodes.Contains(clickedNode)) // Controlla se è un nodo valido
+            if (clickedNode != null && validNodes.Contains(clickedNode))
             {
                 // Muovi il player sopra il nodo cliccato
                 transform.position = clickedNode.transform.position + Vector3.up;
+
+                // Cambia lo stato del nodo a PLAYERON e lo memorizza
+                clickedNode.state = GridNode.GridNodeState.PLAYERON;
+                Debug.Log("Nodo aggiornato a PLAYERON!");
+
+                if (!occupiedNodes.Contains(clickedNode))
+                {
+                    occupiedNodes.Add(clickedNode); // Mantieni il nodo salvato
+                }
+
+                // Mantieni i nodi precedenti su PLAYERON
+                foreach (GridNode node in occupiedNodes)
+                {
+                    node.state = GridNode.GridNodeState.PLAYERON;
+                }
             }
             else
             {
-                Debug.Log("Non puoi muoverti su questo nodo!");
+                Debug.Log("Non puoi posizionarti su questo nodo!");
             }
         }
     }
+
+
 
     public GameObject OnGridNode()
     {

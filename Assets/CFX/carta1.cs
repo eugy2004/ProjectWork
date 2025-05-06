@@ -78,20 +78,30 @@ public class Carta1 : MonoBehaviour
     {
         if (lastHighlightedNode != null)
         {
-            // Verifica se il nodo cliccato è occupato dal player
-            GameObject currentPlayerNode = playerMove.OnGridNode();
-            if (currentPlayerNode == lastHighlightedNode.gameObject)
+            Debug.Log("Nodo selezionato: " + lastHighlightedNode.name);
+
+            // Trova la capsula che occupa il nodo usando il riferimento salvato nel nodo
+            if (lastHighlightedNode.playerMove != null)
             {
-                // Fai scomparire il player
-                playerMove.gameObject.SetActive(false);
-                Debug.Log("Il player è stato eliminato!");
+                GameObject troopOnNode = lastHighlightedNode.playerMove.gameObject;
+                Debug.Log("Capsula trovata: " + troopOnNode.name);
+
+                // Disattiva solo la capsula sopra il nodo selezionato
+                troopOnNode.SetActive(false);
+                lastHighlightedNode.playerMove = null; // Rimuove il riferimento alla truppa
+                Debug.Log("Capsula eliminata su nodo " + lastHighlightedNode.name);
             }
             else
             {
-                Debug.Log("Nodo vuoto, nessuna azione eseguita.");
+                Debug.Log("Nessuna truppa sul nodo selezionato.");
             }
         }
     }
+
+
+
+
+
 
     private void ResetNodeColor()
     {

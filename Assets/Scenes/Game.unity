@@ -2309,14 +2309,6 @@ MonoBehaviour:
   prefabWarrior: {fileID: 6451186477477006279, guid: 406e74380b30ac7439bf2d8b4f138993, type: 3}
   prefabArcher: {fileID: 5188234584621860679, guid: f3f4a6487fcb3c64f8a96b170ff03578, type: 3}
   prefabWizard: {fileID: 980388458138549895, guid: 6574cdf0bb6920c46ab8742f8087a3cc, type: 3}
-<<<<<<< Updated upstream
-  troop: {fileID: -162918408591855016, guid: 6574cdf0bb6920c46ab8742f8087a3cc, type: 3}
-  character:
-    serializedVersion: 2
-    m_Bits: 64
-=======
-  troop: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!4 &306300515
 Transform:
   m_ObjectHideFlags: 0

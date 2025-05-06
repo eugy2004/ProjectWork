@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6231146154921291497}
   m_Layer: 6
   m_Name: Wizard
-  m_TagString: Troop
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,5 +140,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba0145b7c27bcb141a9c39d0b89c89bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInTurn: 0
   isSelected: 0

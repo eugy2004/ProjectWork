@@ -80,29 +80,29 @@ public class Carta1 : MonoBehaviour
         {
             Debug.Log("Nodo selezionato: " + lastHighlightedNode.name);
 
-            // Trova la capsula che occupa il nodo usando il riferimento salvato nel nodo
-            if (lastHighlightedNode.playerMove != null)
-            {
-                GameObject troopOnNode = lastHighlightedNode.playerMove.gameObject;
-                Debug.Log("Capsula trovata: " + troopOnNode.name);
+            // Lancia un Raycast dal nodo verso l'alto
+            Ray ray = new Ray(lastHighlightedNode.transform.position, Vector3.up);
+            RaycastHit hit;
 
-                // Disattiva solo la capsula sopra il nodo selezionato
-                troopOnNode.SetActive(false);
-                lastHighlightedNode.playerMove = null; // Rimuove il riferimento alla truppa
-                Debug.Log("Capsula eliminata su nodo " + lastHighlightedNode.name);
-            }
-            else
+            if (Physics.Raycast(ray, out hit, 5f)) // Limita la distanza a 5 per evitare colpi inutili
             {
-                Debug.Log("Nessuna truppa sul nodo selezionato.");
+                GameObject troopOnNode = hit.collider.gameObject;
+
+                if (troopOnNode.CompareTag("Troop")) // Assicurati che la capsula abbia il tag "Troop"
+                {
+                    Debug.Log("Capsula trovata sopra il nodo: " + troopOnNode.name);
+
+                    // Distruggi la capsula sopra il nodo selezionato
+                    Destroy(troopOnNode);
+                    Debug.Log("Capsula eliminata su nodo " + lastHighlightedNode.name);
+                }
+                else
+                {
+                    Debug.Log("Nessuna truppa sopra il nodo selezionato.");
+                }
             }
         }
     }
-
-
-
-
-
-
     private void ResetNodeColor()
     {
         if (lastHighlightedNode != null)

@@ -12,9 +12,15 @@ TagManager:
   - GridNode
   - Water
   - UI
+<<<<<<< Updated upstream
   - Character
   - 
   - 
+=======
+  - Archer
+  - Warrior
+  - Wizard
+>>>>>>> Stashed changes
   - 
   - 
   - 

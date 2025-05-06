@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<GameObject> player1Troops, player2Troops;    // le truppe del primo e del secondo player
-    private byte playerID;            // serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
+    [SerializeField] private byte maxAttackActions = 3;
+    [SerializeField] private byte maxMoveActions = 3;
 
+    private List<GameObject> player1Troops, player2Troops;    // le truppe del primo e del secondo player
+    [SerializeField] private byte playerID;            // serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
     private byte MoveActions { get; set; }
     private byte AttackActions { get; set; }
     public enum GameState { CoinFlip, Placement, Draw, PlayerAction, Victory }
@@ -107,8 +109,8 @@ public class GameManager : MonoBehaviour
 
     private void SetUpNextPlayerAction()
     {
-        MoveActions = 3;
-        AttackActions = 3;
+        MoveActions = maxAttackActions;
+        AttackActions = maxMoveActions;
         switch (playerID)
         {
             case 1:

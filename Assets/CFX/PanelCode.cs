@@ -8,6 +8,7 @@ public class PanelCode : MonoBehaviour
     public Button button3;
     public Button readyButton;
     public GameObject panel;
+    public GameObject mazzo; // Il mazzo da attivare
     public int maxTroops = 5;
     private int troopCount = 0;
 
@@ -17,6 +18,9 @@ public class PanelCode : MonoBehaviour
         button2.onClick.AddListener(() => PlaceTroop());
         button3.onClick.AddListener(() => PlaceTroop());
         readyButton.onClick.AddListener(() => Ready());
+
+        // Assicurati che il mazzo sia disattivato all'inizio
+        mazzo.SetActive(false);
     }
 
     void PlaceTroop()
@@ -24,7 +28,6 @@ public class PanelCode : MonoBehaviour
         if (troopCount < maxTroops)
         {
             troopCount++;
-            // Codice per posizionare la truppa nel campo
             Debug.Log("Truppa posizionata. Totale truppe: " + troopCount);
         }
         else
@@ -38,8 +41,8 @@ public class PanelCode : MonoBehaviour
         if (troopCount == maxTroops)
         {
             panel.SetActive(false);
-            // Codice per passare alla schermata di combattimento
-            Debug.Log("Passaggio alla schermata di combattimento.");
+            mazzo.SetActive(true); // Attiva il mazzo quando si preme il bottone "Ready"
+            Debug.Log("Passaggio alla schermata di combattimento e mazzo attivato.");
         }
         else
         {

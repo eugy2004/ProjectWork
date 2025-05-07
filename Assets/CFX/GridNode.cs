@@ -32,10 +32,8 @@ public class GridNode : MonoBehaviour
         OnPlayerOn();
     }
 
-    private void OnMouseExit()
-    {
-        gridnodeRenderer.material.SetColor("_BaseColor", originalColor);
-    }
+    
+
 
     public void OnPlayerOn()
     {
@@ -112,4 +110,10 @@ public class GridNode : MonoBehaviour
         // Aggiorna i nodi validi nel player
         playerMove.UpdateValidNodes(nuoviNodiValidi);
     }
+
+    public Color GetOriginalColor()
+    {
+        return originalColor;
+    }
+
 }

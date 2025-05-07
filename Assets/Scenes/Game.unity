@@ -2306,9 +2306,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836664ffa38b7174cbbfdf6622bb02b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Troops: []
+  player2Troops: []
   prefabWarrior: {fileID: 6451186477477006279, guid: 406e74380b30ac7439bf2d8b4f138993, type: 3}
   prefabArcher: {fileID: 5188234584621860679, guid: f3f4a6487fcb3c64f8a96b170ff03578, type: 3}
   prefabWizard: {fileID: 980388458138549895, guid: 6574cdf0bb6920c46ab8742f8087a3cc, type: 3}
+  troop: {fileID: 0}
+  character:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &306300515
 Transform:
   m_ObjectHideFlags: 0
@@ -14443,6 +14449,7 @@ MonoBehaviour:
   button3: {fileID: 956791651}
   readyButton: {fileID: 1246568715}
   panel: {fileID: 1655702640}
+  mazzo: {fileID: 1939329454}
   maxTroops: 5
 --- !u!1 &1685819835
 GameObject:
@@ -17284,7 +17291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1939329455
 MonoBehaviour:
   m_ObjectHideFlags: 0

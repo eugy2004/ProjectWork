@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Carta1 : MonoBehaviour
 {
@@ -80,21 +81,24 @@ public class Carta1 : MonoBehaviour
         {
             Debug.Log("Nodo selezionato: " + lastHighlightedNode.name);
 
-            // Lancia un Raycast dal nodo verso l'alto
+            // Lancia un Raycast dal nodo verso l'alto per controllare se c'è una truppa
             Ray ray = new Ray(lastHighlightedNode.transform.position, Vector3.up);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 5f)) // Limita la distanza a 5 per evitare colpi inutili
+            if (Physics.Raycast(ray, out hit, 5f))
             {
                 GameObject troopOnNode = hit.collider.gameObject;
 
-                if (troopOnNode.CompareTag("Troop")) // Assicurati che la capsula abbia il tag "Troop"
+                if (troopOnNode.CompareTag("Troop"))
                 {
                     Debug.Log("Capsula trovata sopra il nodo: " + troopOnNode.name);
 
-                    // Distruggi la capsula sopra il nodo selezionato
+                    // Elimina la truppa
                     Destroy(troopOnNode);
                     Debug.Log("Capsula eliminata su nodo " + lastHighlightedNode.name);
+
+                    // Ripristina il colore originale dei nodi adiacenti
+                    ResetAdjacentNodeColors(lastHighlightedNode);
                 }
                 else
                 {
@@ -109,11 +113,74 @@ public class Carta1 : MonoBehaviour
         if (lastHighlightedNode != null)
         {
             Renderer renderer = lastHighlightedNode.GetComponent<Renderer>();
-            if (renderer != null && lastHighlightedNode.originalMaterial != null)
+            if (renderer != null)
             {
-                renderer.material = lastHighlightedNode.originalMaterial; // Ripristina il materiale originale
+                // Se il nodo ha una truppa sopra, deve rimanere verde (colore originale)
+                if (IsTroopOnNode(lastHighlightedNode))
+                {
+                    renderer.material.color = lastHighlightedNode.GetOriginalColor(); // Mantieni il verde
+                }
+                else if (lastHighlightedNode.state == GridNode.GridNodeState.PLAYERON || IsValidNodeForAnyTroop(lastHighlightedNode))
+                {
+                    renderer.material.color = Color.yellow; // Mantieni giallo per i nodi validi
+                }
+                else
+                {
+                    renderer.material.color = lastHighlightedNode.GetOriginalColor();
+                }
             }
             lastHighlightedNode = null;
         }
+    }
+
+    private void ResetAdjacentNodeColors(GridNode node)
+    {
+        foreach (GridNode linkedNode in node.linkedNodes)
+        {
+            Renderer renderer = linkedNode.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = linkedNode.GetOriginalColor(); // Torna al verde
+            }
+        }
+
+        foreach (GridNode linkedDiagonalNode in node.linkedDiagonalNodes)
+        {
+            Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = linkedDiagonalNode.GetOriginalColor(); // Torna al verde
+            }
+        }
+
+        Debug.Log("I nodi adiacenti sono stati ripristinati al loro colore originale.");
+    }
+
+    private bool IsTroopOnNode(GridNode node)
+    {
+        Ray ray = new Ray(node.transform.position, Vector3.up);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 5f))
+        {
+            if (hit.collider.CompareTag("Troop"))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private bool IsValidNodeForAnyTroop(GridNode node)
+    {
+        foreach (PlayerMove troop in FindObjectsOfType<PlayerMove>())
+        {
+            if (troop.GetValidNodes().Contains(node))
+            {
+                return true; // Il nodo è valido per almeno una truppa
+            }
+        }
+        return false;
     }
 }

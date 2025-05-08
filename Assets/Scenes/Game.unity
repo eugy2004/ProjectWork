@@ -151,6 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1601838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -272,6 +279,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &8934929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -393,6 +407,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &33825550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -514,6 +535,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &56779946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -635,6 +663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &103002610
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -756,6 +791,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &110561433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -877,6 +919,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &118684203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -998,6 +1047,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &173962777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1119,6 +1175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &182278369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1240,6 +1303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &190027215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1361,6 +1431,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &197588207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1482,6 +1559,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &208344639
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1739,6 +1823,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &216984158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1860,6 +1951,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &237686435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1981,6 +2079,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &275111277
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2155,6 +2260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &323720078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2378,6 +2490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &386955072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2499,6 +2618,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &392316464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2620,6 +2746,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &398632456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2741,6 +2874,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &399144595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2862,6 +3002,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &404969866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2983,6 +3130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &406039584
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3104,6 +3258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &406813075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3225,6 +3386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &409103614
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3346,6 +3514,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &409875125
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3467,6 +3642,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &437390128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3588,6 +3770,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &467487428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3709,6 +3898,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &475997637
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3830,6 +4026,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &501817232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3951,6 +4154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &508122803
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4209,6 +4419,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &517125406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4330,6 +4547,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &522570920
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4451,6 +4675,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &548705399
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4708,6 +4939,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &577711528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4829,6 +5067,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &598987112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4950,6 +5195,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &631614542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5071,6 +5323,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &656847287
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5192,6 +5451,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &660135104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5392,6 +5658,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &699383830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5513,6 +5786,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &724723579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5770,6 +6050,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &771367348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5891,6 +6178,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &792150989
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6269,6 +6563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &813284910
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6390,6 +6691,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &838717555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6511,6 +6819,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &848422731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6710,6 +7025,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &880667571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6831,6 +7153,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &910579674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6952,6 +7281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &915558211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7345,6 +7681,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1001184056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7466,6 +7809,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1014956064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7587,6 +7937,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1046513472
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7708,6 +8065,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1064921918
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7829,6 +8193,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1073124974
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7950,6 +8321,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1081651107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8071,6 +8449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1101183315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8192,6 +8577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1108878943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8313,6 +8705,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1116733370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8434,6 +8833,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1134115876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8555,6 +8961,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1168587230
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8676,6 +9089,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1189021477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8797,6 +9217,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1204691432
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8918,6 +9345,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1211193363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9039,6 +9473,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1239622804
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9281,6 +9722,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1248788392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9402,6 +9850,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1258408270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9523,6 +9978,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1270028382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9644,6 +10106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1272674487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9765,6 +10234,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1273526094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9886,6 +10362,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1307233769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10007,6 +10490,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1310001331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10128,6 +10618,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1312773596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10249,6 +10746,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1315426686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10370,6 +10874,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1323973137
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10491,6 +11002,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1325474696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10612,6 +11130,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1330441556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10733,6 +11258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1344419737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10854,6 +11386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1359065973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10975,6 +11514,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1359251310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11096,6 +11642,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1371022948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11217,6 +11770,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1381799018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11338,6 +11898,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1388740376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11459,6 +12026,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1404744475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11577,6 +12151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f09d097341960c4dacd41a5e77309b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridNodeTemplate: {fileID: 0}
+  righe: 7
+  colonne: 15
+  gridNodesList: []
 --- !u!4 &1428161852
 Transform:
   m_ObjectHideFlags: 0
@@ -11744,6 +12322,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1456432326
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11865,6 +12450,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1476871237
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11986,6 +12578,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1497951296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12243,6 +12842,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1510139792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12364,6 +12970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1522889962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12485,6 +13098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1539251647
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12606,6 +13226,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1539403414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12727,6 +13354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1578673023
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12848,6 +13482,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1605076341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12969,6 +13610,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1645268602
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13148,6 +13796,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed58455d3f918d14a9e98996dc57ac62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button1: {fileID: 800643190}
+  button2: {fileID: 949950511}
+  button3: {fileID: 956791651}
+  readyButton: {fileID: 1246568715}
+  panel: {fileID: 1655702640}
+  mazzo: {fileID: 1939329454}
+  maxTroops: 5
 --- !u!1 &1685819835
 GameObject:
   m_ObjectHideFlags: 0
@@ -13180,6 +13835,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1685819837
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13301,6 +13963,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1703682405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13422,6 +14091,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1712883036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13543,6 +14219,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1719118100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13664,6 +14347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1722394176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13785,6 +14475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1722876453
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13906,6 +14603,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1741534962
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14027,6 +14731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1742854928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14148,6 +14859,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1785735425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14269,6 +14987,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1804710332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14390,6 +15115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1812226262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14511,6 +15243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1824897322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14632,6 +15371,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1855004272
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14753,6 +15499,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1859790068
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14874,6 +15627,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1866516456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14995,6 +15755,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1888402943
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15116,6 +15883,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1903731855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15237,6 +16011,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1909623674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15358,6 +16139,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1917487588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15479,6 +16267,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1931787302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15600,6 +16395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1938636420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15721,6 +16523,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1105cf91ddb451a45b6e02dc2157d6da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Carta1: {fileID: 0}
+  Carta2: {fileID: 0}
+  Carta3: {fileID: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1939329456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15842,6 +16648,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1951233652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15963,6 +16776,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1973853469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16084,6 +16904,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1975568816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16205,6 +17032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &1989109595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16326,6 +17160,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &2017091310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16447,6 +17288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &2078279665
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16568,6 +17416,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9664e762105b07438fd7e2ce5dc3b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  gridManager: {fileID: 0}
+  coordinate: {x: 0, y: 0}
+  linkedNodes: []
+  linkedDiagonalNodes: []
+  originalMaterial: {fileID: 0}
+  playerMove: {fileID: 0}
 --- !u!65 &2134660830
 BoxCollider:
   m_ObjectHideFlags: 0

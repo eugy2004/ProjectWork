@@ -11,7 +11,7 @@ public class Archer : Character
         base.Move();
     }
 
-    public override void OnHitSuffered() {
-        base.OnHitSuffered();
+    public override void OnHitSuffered(byte dmg) {
+        base.OnHitSuffered(dmg);
     }
 }

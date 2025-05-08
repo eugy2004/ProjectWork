@@ -19,6 +19,11 @@ public class Troop : MonoBehaviour
 
     public Vector3 lastDeployPosition;
 
+    public Character character;
+
+    private void Awake() {
+        character = GetComponent<Character>();
+    }
 
     void Start()
     {
@@ -81,14 +86,14 @@ public class Troop : MonoBehaviour
             Destroy(gameObject);
             AnyDeploying = false;
         }
-       
+        //AnyDeploying = false;
     }
-    /*
+    
     public void Dead()
     {
         Object.Destroy(gameObject);
     }
 
-    */
+    
 
 }

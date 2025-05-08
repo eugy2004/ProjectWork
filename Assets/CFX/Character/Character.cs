@@ -3,9 +3,12 @@ using UnityEngine;
 public class Character : MonoBehaviour 
 {
 
-    public byte hp, attack, defence;
+    public byte maxHp, hp, attack, defence;
+    public byte timesAttacked;
     public Troop troop;
-
+    private void Awake() {
+        troop = GetComponent<Troop>();
+    }
     public virtual void Attack(Character target) 
     {
         // damageManager.ProcessDamage(this, target);
@@ -16,9 +19,9 @@ public class Character : MonoBehaviour
         
     }
 
-    public virtual void OnHitSuffered() 
+    public virtual void OnHitSuffered(byte dmg) 
     {
-        
+        hp -= dmg;
     }
 
     public void OnSelect()

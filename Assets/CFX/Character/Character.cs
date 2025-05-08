@@ -4,6 +4,7 @@ public class Character : MonoBehaviour
 {
 
     public byte hp, attack, defence;
+    public Troop troop;
 
     public virtual void Attack(Character target) 
     {
@@ -17,7 +18,7 @@ public class Character : MonoBehaviour
 
     public virtual void OnHitSuffered() 
     {
-
+        
     }
 
     public void OnSelect()

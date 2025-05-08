@@ -1,27 +1,29 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> player1Troops, player2Troops;    // le truppe del primo e del secondo player
-    private byte playerID;            // serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
-
+    [SerializeField] private List<GameObject> player1Troops, player2Troops;// le truppe del primo e del secondo player
+    private byte playerID;// serve a capire di chi sarà il prossimo turno (viene passato alla funzione SetUpNextPlayerAction)
     private byte MoveActions { get; set; }
     private byte AttackActions { get; set; }
     public enum GameState { CoinFlip, Placement, Draw, PlayerAction, Victory }
     private GameState CurrentState { get; set; }
 
-    public GameObject prefabWarrior;
+    public GameObject prefabKnight;
 
     public GameObject prefabArcher;
 
-    public GameObject prefabWizard;
+    public GameObject prefabMage;
 
     public Troop troop;
 
     private PlayerMove activePlayerMove;
+
+    GameObject hitCharacter;
+    public LayerMask character;
+    PlayerMove characterSelMove;
 
     //funzioni di Unity
     void Start()
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
         CurrentState = GameState.CoinFlip;
         MoveActions = 0;
         AttackActions = 0;
-        playerID = 2;                         // messo a due per farlo sostituire a 1 dal CheckTurnPass dato che fino al SetUpNextPlayerTurn moveAction e attackActions sono 0
+        playerID = 0;// messo a due per farlo sostituire a 1 dal CheckTurnPass dato che fino al SetUpNextPlayerTurn moveAction e attackActions sono 0
     }
 
     private void Update()
@@ -81,11 +83,12 @@ public class GameManager : MonoBehaviour
             case GameState.PlayerAction:
                 if (CheckTurnPass())
                 {
-                    if (playerID == 1)          // determina a chi bisogna passare il turno
-                        playerID++;
-                    else
-                        playerID--;
 
+                    if(playerID % 2 == 0)                       
+                    {
+                        
+                    }
+                    playerID++;
                     ChangeState(GameState.Draw);
                 }
                 TroopSelectionRaycast();
@@ -97,7 +100,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private bool CheckTurnPass()                        // è nell'update perciò potrebbe consumare di più di se fosse fatto con eventi
+    private bool CheckTurnPass()// è nell'update perciò potrebbe consumare di più di se fosse fatto con eventi
     {
         if (MoveActions == 0 && AttackActions == 0)
         {
@@ -139,9 +142,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    GameObject hitCharacter;
-    public LayerMask character;
-    PlayerMove characterSelMove;
+
     private void TroopSelectionRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -152,7 +153,7 @@ public class GameManager : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 1000f, character))
             {
-                DeselectCharacter();                                    //pensa a come fare per quando un personaggio viene colpito un secondo personaggio
+                DeselectCharacter();//pensa a come fare per quando un personaggio viene colpito un secondo personaggio
                 Debug.Log("Personaggio colpito");
                 // qua possiamo inserire il display delle statistiche del personaggio selezionato
 
@@ -160,7 +161,7 @@ public class GameManager : MonoBehaviour
 
                 characterSelMove = hitCharacter.GetComponent<PlayerMove>();
 
-                if (characterSelMove.isInTurn)      // se il personaggio appartiene ai personaggi del giocatore corrente
+                if (characterSelMove.isInTurn)// se il personaggio appartiene ai personaggi del giocatore corrente
                 {
                     Debug.Log("Personaggio correttamente selezionato");
                     characterSelMove.isSelected = true;
@@ -171,7 +172,7 @@ public class GameManager : MonoBehaviour
 
     private void DeselectCharacter()
     {
-        if (hitCharacter != null)    // per deselezionare il personaggio
+        if (hitCharacter != null)// per deselezionare il personaggio
         {
             characterSelMove = hitCharacter.GetComponent<PlayerMove>();
             characterSelMove.isSelected = false;
@@ -179,30 +180,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DeployTroop(int IdTroop)
+    public void DeployTroop(int idTroop)
     {
-        switch (IdTroop)
+        switch (idTroop)
         {
             case 0:
-                DeployTroop(prefabWarrior);
+                DeployTypeOfTroop(prefabKnight);
                 break;
             case 1:
-                DeployTroop(prefabArcher);
+                DeployTypeOfTroop(prefabArcher);
                 break;
             case 2:
-                DeployTroop(prefabWizard);
+                DeployTypeOfTroop(prefabMage);
                 break;
             default:
                 break;
         }
     }
 
-    public void DeployTroop(GameObject typeOfTroop)
+    public void DeployTypeOfTroop(GameObject typeOfTroop)
     {
         GameObject newPlayer = Instantiate(typeOfTroop, Vector3.zero, Quaternion.identity);
         activePlayerMove = newPlayer.GetComponent<PlayerMove>();
 
-        player1Troops.Add(newPlayer);                                  //solo per test, da cambiare successivamente
+        player1Troops.Add(newPlayer);//solo per test, da cambiare successivamente
 
         foreach (GridNode node in FindObjectsOfType<GridNode>())
         {

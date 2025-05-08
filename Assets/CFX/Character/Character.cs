@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class Character 
+public class Character : MonoBehaviour 
 {
+
     public byte hp, attack, defence;
 
     public virtual void Attack(Character target) 

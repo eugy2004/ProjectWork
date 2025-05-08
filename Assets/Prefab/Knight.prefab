@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5732438086018585372}
   - component: {fileID: -4543749416472512110}
   - component: {fileID: -709418658527501081}
+  - component: {fileID: 1024790641200133028}
   m_Layer: 6
-  m_Name: Warrior
+  m_Name: Knight
   m_TagString: Troop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,3 +143,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTurn: 0
   isSelected: 0
+--- !u!114 &1024790641200133028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451186477477006279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8664425628b09994286a1162d7428a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  attack: 0
+  defence: 0

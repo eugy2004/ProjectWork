@@ -19,6 +19,7 @@ public class Troop : MonoBehaviour
 
     public Vector3 lastDeployPosition;
 
+
     void Start()
     {
         gameManager = Object.FindFirstObjectByType<GameManager>();
@@ -59,10 +60,6 @@ public class Troop : MonoBehaviour
                 transform.position = lastDeployPosition;
                 renderer.enabled = true;
             }
-            else
-            {
-                renderer.enabled = false;
-            }
         }
     }
 
@@ -71,14 +68,15 @@ public class Troop : MonoBehaviour
         if (isDeploying && Input.GetMouseButtonDown(0) && renderer.enabled)
         {
             isDeploying = false;
-            AnyDeploying = false;
+
             renderer.enabled = true;
             transform.position = lastDeployPosition;
         }
         if (isDeploying && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape)))
         {
             Destroy(gameObject);
-            AnyDeploying = false;
+
         }
+        AnyDeploying = false;
     }
 }

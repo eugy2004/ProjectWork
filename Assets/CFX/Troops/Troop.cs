@@ -86,14 +86,10 @@ public class Troop : MonoBehaviour
             Destroy(gameObject);
             AnyDeploying = false;
         }
-        //AnyDeploying = false;
     }
     
     public void Dead()
     {
         Object.Destroy(gameObject);
     }
-
-    
-
 }

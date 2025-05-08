@@ -8,29 +8,27 @@ public class PlayerMove : MonoBehaviour
     public bool isInTurn;                                     // per sapere se è il turno del suo giocatore
     public bool isSelected;                                   // per non far muovere tutti i personaggi
 
+    private List<GridNode> occupiedNodes = new List<GridNode>(); // Lista dei nodi occupati
 
     private void Awake()
     {
         isSelected = false;
+        isInTurn = true;                                 //Cambiare in futuro
     }
 
     private void Update()
     {
-        if (isSelected)
-        {
-            CameraRayCast(); // Gestisce il movimento verso un nodo valido
-        }
         OnGridNode();    // Ottiene il nodo attuale
+        CameraMoveRayCast(); // Gestisce il movimento verso un nodo valido
     }
 
-    private List<GridNode> occupiedNodes = new List<GridNode>(); // Lista dei nodi occupati
 
-    public void CameraRayCast()
+    public void CameraMoveRayCast()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f))
+        if (Physics.Raycast(ray, out hit, 1000f))
         {
             GridNode clickedNode = hit.transform.GetComponent<GridNode>();
             if (clickedNode != null && validNodes.Contains(clickedNode))
@@ -40,7 +38,6 @@ public class PlayerMove : MonoBehaviour
 
                 // Cambia lo stato del nodo a PLAYERON e lo memorizza
                 clickedNode.state = GridNode.GridNodeState.PLAYERON;
-                Debug.Log("Nodo aggiornato a PLAYERON!");
 
                 if (!occupiedNodes.Contains(clickedNode))
                 {

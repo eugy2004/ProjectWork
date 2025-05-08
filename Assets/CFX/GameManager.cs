@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         player1Troops = new List<GameObject>();
         player2Troops = new List<GameObject>();
-        CurrentState = GameState.CoinFlip;
+        CurrentState = GameState.PlayerAction;
         MoveActions = 3;
         AttackActions = 3;
         playerID = 0;
@@ -146,22 +146,21 @@ public class GameManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        int layerMaskChar = LayerMask.GetMask("Character");
 
         // Controlla il click e vede se colpisce un Character
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(ray, out hit, 1000f, character))
+            if (Physics.Raycast(ray, out hit, 1000f, layerMaskChar))
             {
-                Debug.Log("Personaggio colpito");
                 // qua possiamo inserire il display delle statistiche del personaggio selezionato
 
                 hitCharacter = hit.transform.gameObject;
 
                 characterSelMove = hitCharacter.GetComponent<PlayerMove>();
 
-                if (characterSelMove.isInTurn)// se il personaggio appartiene ai personaggi del giocatore corrente
+                if (characterSelMove.isInTurn)  // se il personaggio appartiene ai personaggi del giocatore corrente
                 {
-                    Debug.Log("Personaggio correttamente selezionato");
                     characterSelMove.isSelected = true;
                 }
             }

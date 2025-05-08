@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
         player1Troops = new List<GameObject>();
         player2Troops = new List<GameObject>();
         CurrentState = GameState.CoinFlip;
-        MoveActions = 0;
-        AttackActions = 0;
-        playerID = 0;// messo a due per farlo sostituire a 1 dal CheckTurnPass dato che fino al SetUpNextPlayerTurn moveAction e attackActions sono 0
+        MoveActions = 3;
+        AttackActions = 3;
+        playerID = 0;
     }
 
     private void Update()
@@ -83,13 +83,12 @@ public class GameManager : MonoBehaviour
             case GameState.PlayerAction:
                 if (CheckTurnPass())
                 {
-
-                    if(playerID % 2 == 0)                       
+                    playerID++;
+                    if (playerID % 2 == 0)
                     {
                         
                     }
-                    playerID++;
-                    ChangeState(GameState.Draw);
+                    ChangeState(GameState.Draw);//probabilmente dovrò attivare la lista delle truppe del primo giocatore all'inizio
                 }
                 TroopSelectionRaycast();
                 break;
@@ -116,12 +115,12 @@ public class GameManager : MonoBehaviour
         AttackActions = 3;
         switch (playerID)
         {
-            case 1:
+            case 0:
                 Debug.Log("yipee");
                 HandleTroopActivation(player2Troops, player1Troops);
                 break;
 
-            case 2:
+            case 1:
                 HandleTroopActivation(player1Troops, player2Troops);
                 break;
         }
@@ -153,7 +152,6 @@ public class GameManager : MonoBehaviour
         {
             if (Physics.Raycast(ray, out hit, 1000f, character))
             {
-                DeselectCharacter();//pensa a come fare per quando un personaggio viene colpito un secondo personaggio
                 Debug.Log("Personaggio colpito");
                 // qua possiamo inserire il display delle statistiche del personaggio selezionato
 
@@ -166,6 +164,10 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Personaggio correttamente selezionato");
                     characterSelMove.isSelected = true;
                 }
+            }
+            else
+            {
+                DeselectCharacter();
             }
         }
     }

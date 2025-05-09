@@ -3,12 +3,9 @@ using DG.Tweening.Core.Easing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
 public class Troop : MonoBehaviour
 {
-    private GameManager gameManager;
-    private GridNode gridNode;
-
+    private GameManager gameManager; private GridNode gridNode;
     public bool isDeploying;
 
     public static bool AnyDeploying = false;
@@ -21,7 +18,8 @@ public class Troop : MonoBehaviour
 
     public Character character;
 
-    private void Awake() {
+    private void Awake()
+    {
         character = GetComponent<Character>();
     }
 
@@ -65,7 +63,7 @@ public class Troop : MonoBehaviour
                 transform.position = lastDeployPosition;
                 renderer.enabled = true;
             }
-            else 
+            else
             {
                 renderer.enabled = false;
             }
@@ -87,7 +85,7 @@ public class Troop : MonoBehaviour
             AnyDeploying = false;
         }
     }
-    
+
     public void Dead()
     {
         Object.Destroy(gameObject);

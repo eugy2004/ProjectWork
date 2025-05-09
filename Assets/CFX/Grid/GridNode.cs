@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
-
 public class GridNode : MonoBehaviour
 {
     // Enum per rappresentare lo stato del nodo
     public enum GridNodeState { FREE, PLAYERON }
     public GridNodeState state = GridNodeState.FREE; // Stato iniziale del nodo
-
     public GridManager gridManager;
     public Vector2 coordinate; // Coordinate del nodo, se necessario
     public List<GridNode> linkedNodes = new List<GridNode>();
@@ -32,7 +30,7 @@ public class GridNode : MonoBehaviour
         OnPlayerOn();
     }
 
-    
+
 
 
     public void OnPlayerOn()
@@ -70,50 +68,66 @@ public class GridNode : MonoBehaviour
         AggiornaColoriNodi();
     }
 
+    public Material yellowMaterial; // Assegna il materiale giallo da Unity
+
     private void AggiornaColoriNodi()
     {
-        // Ripristina i colori di tutti i nodi precedenti
+        if (playerMove == null)
+        {
+            Debug.LogWarning("playerMove non è stato assegnato!");
+            return;
+        }
+
+        // Ripristina i materiali originali dei nodi precedenti
         foreach (GridNode nodo in playerMove.GetValidNodes())
         {
             Renderer renderer = nodo.GetComponent<Renderer>();
-            if (renderer != null)
+            if (renderer != null && originalMaterial != null)
             {
-                renderer.material = originalMaterial; // Torna al colore originale
+                renderer.material = originalMaterial; // Ripristina il materiale originale
             }
         }
 
         // Lista temporanea per i nuovi nodi validi
         List<GridNode> nuoviNodiValidi = new List<GridNode>();
 
-        // Colora i nodi adiacenti di giallo
+        // Colora i nodi adiacenti con il materiale giallo
         foreach (GridNode linkedNode in linkedNodes)
         {
             Renderer renderer = linkedNode.GetComponent<Renderer>();
-            if (renderer != null)
+            if (renderer != null && yellowMaterial != null)
             {
-                renderer.material.color = Color.yellow; // Colora di giallo
+                renderer.material = yellowMaterial; // Usa il materiale giallo
                 nuoviNodiValidi.Add(linkedNode);
             }
         }
 
-        // Colora i nodi diagonali di giallo
+        // Colora i nodi diagonali con il materiale giallo
         foreach (GridNode linkedDiagonalNode in linkedDiagonalNodes)
         {
             Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
-            if (renderer != null)
+            if (renderer != null && yellowMaterial != null)
             {
-                renderer.material.color = Color.yellow; // Colora di giallo
+                renderer.material = yellowMaterial; // Usa il materiale giallo
                 nuoviNodiValidi.Add(linkedDiagonalNode);
             }
         }
 
         // Aggiorna i nodi validi nel player
-        playerMove.UpdateValidNodes(nuoviNodiValidi);
+        if (playerMove != null)
+        {
+            playerMove.UpdateValidNodes(nuoviNodiValidi);
+        }
+        else
+        {
+            Debug.LogWarning("playerMove non è definito, impossibile aggiornare nodi validi.");
+        }
     }
+
+
 
     public Color GetOriginalColor()
     {
         return originalColor;
     }
-
 }

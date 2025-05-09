@@ -1,11 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
-
 public class GridManager : MonoBehaviour
 {
     public GridNode gridNodeTemplate;
-
     public int righe = 7;
     public int colonne = 15;
 
@@ -128,5 +126,4 @@ public class GridManager : MonoBehaviour
         Debug.Log("Popolamento nodi diagonali completato.");
         EditorUtility.SetDirty(this);
     }
-
 }

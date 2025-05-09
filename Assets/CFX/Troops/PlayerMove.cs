@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerMove : MonoBehaviour
 {
     private List<GridNode> validNodes = new List<GridNode>(); // Nodi validi (colorati di giallo)
-
     public bool isInTurn;                                     // per sapere se è il turno del suo giocatore
     public bool isSelected;                                   // per non far muovere tutti i personaggi
 

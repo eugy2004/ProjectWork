@@ -1,15 +1,16 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private List<GridNode> validNodes = new List<GridNode>(); // Nodi validi (colorati di giallo)
+    private List<GridNode> validNodes = new List<GridNode>(); // Nodi validi (gialli)
 
-    public bool isInTurn;                                     // per sapere se è il turno del suo giocatore
-    public bool isSelected;                                   // per non far muovere tutti i personaggi
 
-    public Vector3 offsety = new Vector3(0, 1, 0);
+    public bool isInTurn;
+    public bool isSelected;
 
+    private Vector3 offsetY = new Vector3(0, 2, 0);
 
     private void Awake()
     {
@@ -20,14 +21,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (isSelected)
         {
-            CameraRayCast(); // Gestisce il movimento verso un nodo valido
+            CameraRayCastMovement();
         }
-        OnGridNode();    // Ottiene il nodo attuale
     }
 
-    private List<GridNode> occupiedNodes = new List<GridNode>(); // Lista dei nodi occupati
-
-    public void CameraRayCast()
+    public void CameraRayCastMovement()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -36,34 +34,25 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, layerMaskGD))
         {
             GridNode clickedNode = hit.transform.GetComponent<GridNode>();
-            if (clickedNode != null && validNodes.Contains(clickedNode))
+            if (clickedNode != null && validNodes.Contains(clickedNode) && clickedNode.state == GridNode.GridNodeState.FREE)
             {
-                // Muovi il player sopra il nodo cliccato
-                transform.position = clickedNode.transform.position + offsety;
+                GridNode currentNode = OnGridNode().GetComponent<GridNode>();
 
-                // Cambia lo stato del nodo a PLAYERON e lo memorizza
-                clickedNode.state = GridNode.GridNodeState.PLAYERON;
-                Debug.Log("Nodo aggiornato a PLAYERON!");
+                currentNode.state = GridNode.GridNodeState.FREE;
 
-                if (!occupiedNodes.Contains(clickedNode))
-                {
-                    occupiedNodes.Add(clickedNode); // Mantieni il nodo salvato
-                }
+                transform.position = clickedNode.transform.position + offsetY;
 
-                // Mantieni i nodi precedenti su PLAYERON
-                foreach (GridNode node in occupiedNodes)
-                {
-                    node.state = GridNode.GridNodeState.PLAYERON;
-                }
+                currentNode = clickedNode;
+
+                clickedNode.SetPlayer(this);
             }
             else
             {
                 Debug.Log("Non puoi posizionarti su questo nodo!");
+                return;
             }
         }
     }
-
-
 
     public GameObject OnGridNode()
     {
@@ -80,13 +69,11 @@ public class PlayerMove : MonoBehaviour
 
     public void UpdateValidNodes(List<GridNode> newValidNodes)
     {
-        // Aggiorna la lista dei nodi validi
         validNodes = newValidNodes;
     }
 
     public List<GridNode> GetValidNodes()
     {
-        // Restituisce la lista dei nodi validi
         return validNodes;
     }
 }

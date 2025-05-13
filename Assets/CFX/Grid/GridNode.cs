@@ -29,13 +29,13 @@ public class GridNode : MonoBehaviour
 
     private void Update()
     {
-        OnPlayerOn();
+        OnTroopOn();
     }
 
     
 
 
-    public void OnPlayerOn()
+    public void OnTroopOn()
     {
         if (state == GridNodeState.PLAYERON)
         {
@@ -48,7 +48,6 @@ public class GridNode : MonoBehaviour
             {
                 state = GridNodeState.PLAYERON;
                 AggiornaColoriNodi();
-                Debug.Log(name + " impostato a PLAYERON!");
             }
             else
             {
@@ -70,7 +69,7 @@ public class GridNode : MonoBehaviour
         AggiornaColoriNodi();
     }
 
-    private void AggiornaColoriNodi()
+    public void AggiornaColoriNodi()
     {
         // Ripristina i colori di tutti i nodi precedenti
         foreach (GridNode nodo in playerMove.GetValidNodes())

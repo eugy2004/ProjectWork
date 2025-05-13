@@ -142,3 +142,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTurn: 0
   isSelected: 0
+  offsety: {x: 0, y: 2, z: 0}

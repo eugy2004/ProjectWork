@@ -8,10 +8,12 @@ public class PlayerMove : MonoBehaviour
     public bool isInTurn;                                     // per sapere se è il turno del suo giocatore
     public bool isSelected;                                   // per non far muovere tutti i personaggi
 
+    public Vector3 offsety = new Vector3(0, 1, 0);
+
 
     private void Awake()
     {
-        isSelected = false;
+        isSelected = true;
     }
 
     private void Update()
@@ -29,14 +31,15 @@ public class PlayerMove : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+        int layerMaskGD = LayerMask.GetMask("GridNode");
 
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f))
+        if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray, out hit, 1000f, layerMaskGD))
         {
             GridNode clickedNode = hit.transform.GetComponent<GridNode>();
             if (clickedNode != null && validNodes.Contains(clickedNode))
             {
                 // Muovi il player sopra il nodo cliccato
-                transform.position = clickedNode.transform.position + Vector3.up;
+                transform.position = clickedNode.transform.position + offsety;
 
                 // Cambia lo stato del nodo a PLAYERON e lo memorizza
                 clickedNode.state = GridNode.GridNodeState.PLAYERON;

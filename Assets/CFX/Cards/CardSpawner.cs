@@ -35,13 +35,13 @@ public class RandomCardSpawner : MonoBehaviour
 
     void InstanziaCartaCasuale()
     {
-        // Genera un indice casuale
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = Random.Range(0, 3); // Genera un indice casuale
 
-        // Istanzia la carta casuale
-        Instantiate(carte[randomIndex], spawnPosition, Quaternion.identity);
+        // Istanzia la carta casuale con una rotazione di 90 gradi sull'asse Y
+        Instantiate(carte[randomIndex], spawnPosition, Quaternion.Euler(0, 90, 0));
 
-        // Incrementa la coordinata X della posizione di spawn
-        spawnPosition.z += 2;
+        // Incrementa la coordinata Z della posizione di spawn
+        spawnPosition.z += 3;
     }
+
 }

@@ -17821,9 +17821,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carta1: {fileID: 8960894345311643908, guid: 235a53cdfa6ed544980a11360e3cfd03, type: 3}
-  Carta2: {fileID: 6436490341273200515, guid: c70c83f29c855504e9d9b895b13b768e, type: 3}
+  Carta2: {fileID: 8960894345311643908, guid: eb9d2e1303c3d0e43a4fd941f8492dcf, type: 3}
   Carta3: {fileID: 6473788420952464604, guid: ee43f3b1ec7790147afb2e0276654c04, type: 3}
-  spawnPosition: {x: 8.82, y: -1.68, z: -4.33}
+  spawnPosition: {x: 9, y: -1.68, z: -4.33}
 --- !u!65 &1939329456
 BoxCollider:
   m_ObjectHideFlags: 0

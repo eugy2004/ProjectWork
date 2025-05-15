@@ -142,4 +142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTurn: 0
   isSelected: 0
-  offsetY: {x: 0, y: 2, z: 0}
+  isMoving: 0
+  isAttacking: 0
+  idTroop: 1

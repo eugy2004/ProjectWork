@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         isSelected = true;
-        isMoving = true;
+        isMoving = false;
         isAttacking = true;
     }
 
@@ -35,7 +35,7 @@ public class PlayerMove : MonoBehaviour
             {
                 CameraRayCastMovement();
             }
-            else if (isAttacking) 
+            if (isAttacking) 
             {
                 CameraRayCastAttack();
             }
@@ -74,11 +74,14 @@ public class PlayerMove : MonoBehaviour
     public void CameraRayCastAttack()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
         RaycastHit hit;
         RaycastHit targetHit;
+
         int layerMaskGridnode = LayerMask.GetMask("GridNode");
         int layerMaskCharacter = LayerMask.GetMask("Character");
-        GameObject target = new GameObject();
+
+        GridNode targetNode = new GridNode();
 
         switch (idTroop)
         {
@@ -98,13 +101,13 @@ public class PlayerMove : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1000f, layerMaskCharacter) && Input.GetMouseButtonDown(0))
             {
 
-                target = hit.transform.gameObject;
+                GameObject targetTroop = hit.transform.gameObject;
 
                 targetHit = hit;
 
                 if (GetDistanceRayCast(targetHit, gameObject).x < rangeWarrior.x && GetDistanceRayCast(targetHit, gameObject).z < rangeWarrior.z)
                 {
-
+                    Destroy(targetTroop);
                 }
             }
         }
@@ -114,13 +117,13 @@ public class PlayerMove : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1000f, layerMaskCharacter) && Input.GetMouseButtonDown(0))
             {
 
-                target = hit.transform.gameObject;
+                GameObject targetTroop = hit.transform.gameObject;
 
                 targetHit = hit;
 
                 if (GetDistanceRayCast(targetHit, gameObject).x < rangeArcher.x && GetDistanceRayCast(targetHit, gameObject).z < rangeArcher.z)
                 {
-
+                    Destroy(targetTroop);
                 }
             }
         }
@@ -130,13 +133,26 @@ public class PlayerMove : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 1000f, layerMaskGridnode) && Input.GetMouseButtonDown(0))
             {
 
-                target = hit.transform.gameObject;
+                targetNode = hit.transform.GetComponent<GridNode>();
 
                 targetHit = hit;
 
                 if (GetDistanceRayCast(targetHit, gameObject).x < rangeWizard.x && GetDistanceRayCast(targetHit, gameObject).z < rangeWizard.z)
                 {
-
+                    foreach (GridNode node in targetNode.linkedNodes)
+                    {
+                        if (node.state == GridNode.GridNodeState.PLAYERON)
+                        {
+                            Destroy(WhosOnGridNode(node));
+                        }
+                    }
+                    foreach (GridNode node in targetNode.linkedDiagonalNodes)
+                    {
+                        if (node.state == GridNode.GridNodeState.PLAYERON)
+                        {
+                            Destroy(WhosOnGridNode(node));
+                        }
+                    }
                 }
             }
         }
@@ -155,6 +171,21 @@ public class PlayerMove : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, 1000f))
+        {
+            return hit.collider.gameObject;
+        }
+
+        return null;
+    }
+
+    public GameObject WhosOnGridNode (GridNode node)
+    {
+        Ray ray = new Ray(node.transform.position, Vector3.up);
+        RaycastHit hit;
+
+        int layerMaskCharacter = LayerMask.GetMask("Character");
+
+        if (Physics.Raycast(ray, out hit, 1000f, layerMaskCharacter))
         {
             return hit.collider.gameObject;
         }

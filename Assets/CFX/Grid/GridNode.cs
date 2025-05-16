@@ -65,8 +65,6 @@ public class GridNode : MonoBehaviour
     public void OnTroopDeployed()
     {
         state = GridNodeState.PLAYERON;
-        Debug.Log(name + " - Nodo ora è PLAYERON (truppa schierata)");
-        AggiornaColoriNodi();
     }
 
     public void AggiornaColoriNodi()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ZoomOnClick : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ZoomOnClick : MonoBehaviour
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     private float zoomHeight = 2f; // Altezza di zoom
+    private float zoomSpeed = 2f; // Velocità dello zoom
 
     void Start()
     {
@@ -26,40 +28,53 @@ public class ZoomOnClick : MonoBehaviour
             {
                 if (hit.transform == transform) // Se il gameobject è quello cliccato
                 {
-                    ZoomObject(hit.transform.position);
+                    StartCoroutine(ZoomObject(hit.transform.position));
                 }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape)) // Tasto ESC
         {
-            DezoomObject();
+            StartCoroutine(DezoomObject());
         }
     }
 
-    void ZoomObject(Vector3 targetPosition)
+    IEnumerator ZoomObject(Vector3 targetPosition)
     {
         if (!isZoomed)
         {
-            float extraDistance = 2f; // Puoi regolare questa distanza per ottenere più spazio
+            float extraDistance = 2f;
+            Vector3 targetPos = targetPosition + Vector3.up * (zoomHeight + extraDistance);
+            Quaternion targetRot = Quaternion.Euler(90f, 270f, 0f);
 
-            // Posiziona la camera sopra la carta con più distanza
-            mainCamera.transform.position = targetPosition + Vector3.up * (zoomHeight + extraDistance);
+            float elapsedTime = 0f;
+            while (elapsedTime < 1f)
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, targetPos, elapsedTime);
+                mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, targetRot, elapsedTime);
+                elapsedTime += Time.deltaTime * zoomSpeed;
+                yield return null;
+            }
 
-            // Ruota la camera per una vista perfettamente verticale con Y a 270°
-            mainCamera.transform.rotation = Quaternion.Euler(90f, 270f, 0f);
-
+            mainCamera.transform.position = targetPos;
+            mainCamera.transform.rotation = targetRot;
             isZoomed = true;
         }
     }
 
-
-
-    void DezoomObject()
+    IEnumerator DezoomObject()
     {
         if (isZoomed)
         {
-            // Ripristina posizione e rotazione originali
+            float elapsedTime = 0f;
+            while (elapsedTime < 1f)
+            {
+                mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, originalPosition, elapsedTime);
+                mainCamera.transform.rotation = Quaternion.Lerp(mainCamera.transform.rotation, originalRotation, elapsedTime);
+                elapsedTime += Time.deltaTime * zoomSpeed;
+                yield return null;
+            }
+
             mainCamera.transform.position = originalPosition;
             mainCamera.transform.rotation = originalRotation;
             isZoomed = false;

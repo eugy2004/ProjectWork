@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     {
         isSelected = true;
         isMoving = false;
-        isAttacking = true;
+        isAttacking = false;
     }
 
     private void Update()

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1817149924688961509}
   - component: {fileID: -940829032938581643}
   - component: {fileID: 5796871126962029033}
+  - component: {fileID: -758123031063259607}
   m_Layer: 6
   m_Name: Archer
   m_TagString: Troop
@@ -145,3 +146,18 @@ MonoBehaviour:
   isMoving: 0
   isAttacking: 0
   idTroop: 1
+--- !u!114 &-758123031063259607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188234584621860679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2ff06df564df04090fd16980edbcff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
+  attack: 0
+  defence: 0

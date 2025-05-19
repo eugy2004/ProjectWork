@@ -88,14 +88,15 @@ public class Carta1 : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 5f))
             {
                 GameObject troopOnNode = hit.collider.gameObject;
+                Character troopCharacter = troopOnNode.GetComponent<Character>();
 
-                if (troopOnNode.CompareTag("Troop"))
+                if (troopCharacter != null && troopOnNode.CompareTag("Troop"))
                 {
                     Debug.Log("Capsula trovata sopra il nodo: " + troopOnNode.name);
 
-                    // Elimina la truppa
-                    Destroy(troopOnNode);
-                    Debug.Log("Capsula eliminata su nodo " + lastHighlightedNode.name);
+                    // Incrementa l'attacco invece di distruggere la truppa
+                    troopCharacter.attack += 1;
+                    Debug.Log("Attacco aumentato per " + troopOnNode.name + ". Nuovo valore: " + troopCharacter.attack);
 
                     // Ripristina il colore originale dei nodi adiacenti
                     ResetAdjacentNodeColors(lastHighlightedNode);
@@ -107,6 +108,7 @@ public class Carta1 : MonoBehaviour
             }
         }
     }
+
 
     private void ResetNodeColor()
     {

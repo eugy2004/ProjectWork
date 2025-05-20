@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class RandomCardSpawner : MonoBehaviour
 {
@@ -7,26 +8,32 @@ public class RandomCardSpawner : MonoBehaviour
     public GameObject Carta3;
 
     private GameObject[] carte;
-    public Vector3 spawnPosition; // Posizione di spawn iniziale
+    public Vector3 firstSlotPosition; // Inserita manualmente nell'Inspector
+    private List<Vector3> slotPositions = new List<Vector3>(); // Posizioni degli slot
+    private Dictionary<int, GameObject> carteInSlot = new Dictionary<int, GameObject>(); // Mappa slot -> carta
+    private int maxCarte = 5; // Numero massimo di slot disponibili
+    private float offsetZ = 2.5f; // Distanza tra le carte
 
     void Start()
     {
-        // Inizializza l'array con i prefabs delle carte
         carte = new GameObject[] { Carta1, Carta2, Carta3 };
+
+        // Genera le posizioni degli slot basandosi sulla posizione iniziale
+        for (int i = 0; i < maxCarte; i++)
+        {
+            slotPositions.Add(new Vector3(firstSlotPosition.x, firstSlotPosition.y, firstSlotPosition.z + (i * offsetZ)));
+        }
     }
 
     void Update()
     {
-        // Controlla se il tasto sinistro del mouse è stato premuto
         if (Input.GetMouseButtonDown(0)) // Tasto sinistro del mouse
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                // Controlla se il click è avvenuto sull'oggetto del mazzo
                 if (hit.collider != null && hit.collider.gameObject == gameObject)
                 {
-                    // Instanzia una carta casuale
                     InstanziaCartaCasuale();
                 }
             }
@@ -35,13 +42,51 @@ public class RandomCardSpawner : MonoBehaviour
 
     void InstanziaCartaCasuale()
     {
-        int randomIndex = Random.Range(0, 3); // Genera un indice casuale
+        int randomIndex = Random.Range(0, carte.Length); // Genera un indice casuale
 
-        // Istanzia la carta casuale con una rotazione di 90 gradi sull'asse Y
-        Instantiate(carte[randomIndex], spawnPosition, Quaternion.Euler(0, 90, 0));
+        // Trova il primo slot libero
+        int slotLibero = TrovaPrimoSlotLibero();
 
-        // Incrementa la coordinata Z della posizione di spawn
-        spawnPosition.z += 3;
+        if (slotLibero != -1) // Se c'è almeno un posto libero
+        {
+            GameObject nuovaCarta = Instantiate(carte[randomIndex], slotPositions[slotLibero], Quaternion.Euler(0, 90, 0));
+            carteInSlot[slotLibero] = nuovaCarta;
+        }
+        else // Se tutti gli slot sono pieni, fai scalare le carte
+        {
+            ScalaCarte();
+
+            // Instanzia la nuova carta nell'ultimo slot
+            GameObject nuovaCarta = Instantiate(carte[randomIndex], slotPositions[maxCarte - 1], Quaternion.Euler(0, 90, 0));
+            carteInSlot[maxCarte - 1] = nuovaCarta;
+        }
     }
 
+    int TrovaPrimoSlotLibero()
+    {
+        for (int i = 0; i < maxCarte; i++)
+        {
+            if (!carteInSlot.ContainsKey(i) || carteInSlot[i] == null)
+            {
+                return i;
+            }
+        }
+        return -1; // Nessuno slot libero
+    }
+
+    void ScalaCarte()
+    {
+        // Elimina la carta più vecchia
+        Destroy(carteInSlot[0]);
+
+        // Scala tutte le carte
+        for (int i = 0; i < maxCarte - 1; i++)
+        {
+            carteInSlot[i] = carteInSlot[i + 1];
+            carteInSlot[i].transform.position = slotPositions[i]; // Aggiorna la posizione
+        }
+
+        // Libera l'ultimo slot
+        carteInSlot.Remove(maxCarte - 1);
+    }
 }

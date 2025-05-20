@@ -33,7 +33,7 @@ public class ZoomOnClick : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) // Tasto ESC
+        if (Input.GetKeyDown(KeyCode.Escape) || (isZoomed && Input.GetMouseButtonDown(0))) // ESC o Tasto sinistro del mouse
         {
             StartCoroutine(DezoomObject());
         }

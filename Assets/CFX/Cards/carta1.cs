@@ -81,7 +81,7 @@ public class Carta1 : MonoBehaviour
         {
             Debug.Log("Nodo selezionato: " + lastHighlightedNode.name);
 
-            // Lancia un Raycast dal nodo verso l'alto per controllare se c'è una truppa
+            // Controlla se c'è una truppa sopra il nodo
             Ray ray = new Ray(lastHighlightedNode.transform.position, Vector3.up);
             RaycastHit hit;
 
@@ -94,12 +94,18 @@ public class Carta1 : MonoBehaviour
                 {
                     Debug.Log("Capsula trovata sopra il nodo: " + troopOnNode.name);
 
-                    // Incrementa l'attacco invece di distruggere la truppa
+                    // Aumenta l'attacco invece di distruggere la truppa
                     troopCharacter.attack += 1;
                     Debug.Log("Attacco aumentato per " + troopOnNode.name + ". Nuovo valore: " + troopCharacter.attack);
 
                     // Ripristina il colore originale dei nodi adiacenti
                     ResetAdjacentNodeColors(lastHighlightedNode);
+
+                    
+                    ResetNodeColor();
+
+                    
+                    Destroy(gameObject);
                 }
                 else
                 {
@@ -117,14 +123,10 @@ public class Carta1 : MonoBehaviour
             Renderer renderer = lastHighlightedNode.GetComponent<Renderer>();
             if (renderer != null)
             {
-                // Se il nodo ha una truppa sopra, deve rimanere verde (colore originale)
-                if (IsTroopOnNode(lastHighlightedNode))
+                // Se il nodo è valido per una truppa, mantieni il colore giallo
+                if (IsValidNodeForAnyTroop(lastHighlightedNode))
                 {
-                    renderer.material.color = lastHighlightedNode.GetOriginalColor(); // Mantieni il verde
-                }
-                else if (lastHighlightedNode.state == GridNode.GridNodeState.PLAYERON || IsValidNodeForAnyTroop(lastHighlightedNode))
-                {
-                    renderer.material.color = Color.yellow; // Mantieni giallo per i nodi validi
+                    renderer.material.color = Color.yellow;
                 }
                 else
                 {
@@ -135,6 +137,7 @@ public class Carta1 : MonoBehaviour
         }
     }
 
+
     private void ResetAdjacentNodeColors(GridNode node)
     {
         foreach (GridNode linkedNode in node.linkedNodes)
@@ -142,7 +145,14 @@ public class Carta1 : MonoBehaviour
             Renderer renderer = linkedNode.GetComponent<Renderer>();
             if (renderer != null)
             {
-                renderer.material.color = linkedNode.GetOriginalColor(); // Torna al verde
+                if (IsValidNodeForAnyTroop(linkedNode))
+                {
+                    renderer.material.color = Color.yellow; // Mantieni giallo
+                }
+                else
+                {
+                    renderer.material.color = linkedNode.GetOriginalColor();
+                }
             }
         }
 
@@ -151,11 +161,18 @@ public class Carta1 : MonoBehaviour
             Renderer renderer = linkedDiagonalNode.GetComponent<Renderer>();
             if (renderer != null)
             {
-                renderer.material.color = linkedDiagonalNode.GetOriginalColor(); // Torna al verde
+                if (IsValidNodeForAnyTroop(linkedDiagonalNode))
+                {
+                    renderer.material.color = Color.yellow; // Mantieni giallo
+                }
+                else
+                {
+                    renderer.material.color = linkedDiagonalNode.GetOriginalColor();
+                }
             }
         }
 
-        Debug.Log("I nodi adiacenti sono stati ripristinati al loro colore originale.");
+        Debug.Log("I nodi adiacenti sono stati ripristinati, mantenendo quelli validi gialli.");
     }
 
     private bool IsTroopOnNode(GridNode node)

@@ -2445,7 +2445,7 @@ Transform:
   m_GameObject: {fileID: 306300513}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3456564, y: -4.508129, z: 2.4422646}
+  m_LocalPosition: {x: 9.05, y: -0.83, z: 2.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17823,7 +17823,7 @@ MonoBehaviour:
   Carta1: {fileID: 8960894345311643908, guid: 235a53cdfa6ed544980a11360e3cfd03, type: 3}
   Carta2: {fileID: 8960894345311643908, guid: eb9d2e1303c3d0e43a4fd941f8492dcf, type: 3}
   Carta3: {fileID: 6473788420952464604, guid: ee43f3b1ec7790147afb2e0276654c04, type: 3}
-  spawnPosition: {x: 9, y: -1.68, z: -4.33}
+  firstSlotPosition: {x: 9.05, y: -0.83, z: 2.22}
 --- !u!65 &1939329456
 BoxCollider:
   m_ObjectHideFlags: 0

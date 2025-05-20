@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,9 +8,10 @@ public class PanelCode : MonoBehaviour
     public Button button2;
     public Button button3;
     public Button readyButton;
-    public GameObject panel;
-    public GameObject mazzo; // Il mazzo da attivare
-    public int maxTroops = 5;
+    public GameObject panel;        // Primo pannello da disattivare
+    public GameObject secondPanel;  // Secondo pannello da attivare
+    public GameObject mazzo;        // Mazzo da attivare
+    public int maxTroops = 5;
     private int troopCount = 0;
 
     void Start()
@@ -19,8 +21,9 @@ public class PanelCode : MonoBehaviour
         button3.onClick.AddListener(() => PlaceTroop());
         readyButton.onClick.AddListener(() => Ready());
 
-        // Assicurati che il mazzo sia disattivato all'inizio
-        mazzo.SetActive(false);
+        // Disattiva il mazzo e il secondo pannello all'inizio
+        mazzo.SetActive(false);
+        secondPanel.SetActive(false);
     }
 
     void PlaceTroop()
@@ -40,9 +43,10 @@ public class PanelCode : MonoBehaviour
     {
         if (troopCount == maxTroops)
         {
-            panel.SetActive(false);
-            mazzo.SetActive(true); // Attiva il mazzo quando si preme il bottone "Ready"
-            Debug.Log("Passaggio alla schermata di combattimento e mazzo attivato.");
+            panel.SetActive(false);        // Nasconde il primo pannello
+            secondPanel.SetActive(true);   // Mostra il secondo pannello
+            mazzo.SetActive(true);         // Attiva il mazzo
+            Debug.Log("Pronto! Primo pannello nascosto, secondo pannello e mazzo attivati.");
         }
         else
         {

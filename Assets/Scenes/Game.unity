@@ -7162,6 +7162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDTroop: 0
   gameManager: {fileID: 306300514}
+  panelCode: {fileID: 1655702644}
 --- !u!1 &813284908
 GameObject:
   m_ObjectHideFlags: 0
@@ -8275,6 +8276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDTroop: 1
   gameManager: {fileID: 306300514}
+  panelCode: {fileID: 1655702644}
 --- !u!1 &956791649
 GameObject:
   m_ObjectHideFlags: 0
@@ -8411,6 +8413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IDTroop: 2
   gameManager: {fileID: 306300514}
+  panelCode: {fileID: 1655702644}
 --- !u!1 &1001184054
 GameObject:
   m_ObjectHideFlags: 0
@@ -15300,6 +15303,8 @@ MonoBehaviour:
   secondPanel: {fileID: 850741141}
   mazzo: {fileID: 1939329454}
   maxTroops: 5
+  troopCountPlayer1: 0
+  troopCountPlayer2: 0
 --- !u!1 &1685819835
 GameObject:
   m_ObjectHideFlags: 0

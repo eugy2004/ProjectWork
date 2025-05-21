@@ -5,6 +5,7 @@ public class ButtonDeployTroop : MonoBehaviour, IPointerClickHandler
     public int IDTroop;
 
     public GameManager gameManager;
+    public PanelCode panelCode;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -20,5 +21,6 @@ public class ButtonDeployTroop : MonoBehaviour, IPointerClickHandler
         {
             gameManager.DeployTroop(IDTroop);
         }
+        
     }
 }

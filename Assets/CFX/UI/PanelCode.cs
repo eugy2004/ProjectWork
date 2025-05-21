@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +7,13 @@ public class PanelCode : MonoBehaviour
     public Button button2;
     public Button button3;
     public Button readyButton;
-    public GameObject panel;        // Primo pannello da disattivare
-    public GameObject secondPanel;  // Secondo pannello da attivare
-    public GameObject mazzo;        // Mazzo da attivare
-    public int maxTroops = 5;
-    private int troopCount = 0;
+    public GameObject panel;
+    public GameObject secondPanel;
+    public GameObject mazzo;
+    public int maxTroops = 5;
+    public int troopCountPlayer1 = 0;  // Contatore truppe per il primo giocatore
+    public int troopCountPlayer2 = 0;  // Contatore truppe per il secondo giocatore
+    private int currentPlayer = 1;      // Indica il turno
 
     void Start()
     {
@@ -21,36 +22,49 @@ public class PanelCode : MonoBehaviour
         button3.onClick.AddListener(() => PlaceTroop());
         readyButton.onClick.AddListener(() => Ready());
 
-        // Disattiva il mazzo e il secondo pannello all'inizio
-        mazzo.SetActive(false);
+        mazzo.SetActive(false);
         secondPanel.SetActive(false);
     }
 
     void PlaceTroop()
     {
-        if (troopCount < maxTroops)
+        if (currentPlayer == 1 && troopCountPlayer1 < maxTroops)
         {
-            troopCount++;
-            Debug.Log("Truppa posizionata. Totale truppe: " + troopCount);
+            troopCountPlayer1++;
+            Debug.Log($"Giocatore 1: truppa posizionata. Totale truppe: {troopCountPlayer1}");
+        }
+        else if (currentPlayer == 2 && troopCountPlayer2 < maxTroops)
+        {
+            troopCountPlayer2++;
+            Debug.Log($"Giocatore 2: truppa posizionata. Totale truppe: {troopCountPlayer2}");
         }
         else
         {
-            Debug.Log("Numero massimo di truppe raggiunto.");
+            Debug.Log($"Giocatore {currentPlayer}: numero massimo di truppe raggiunto!");
         }
     }
 
     void Ready()
     {
-        if (troopCount == maxTroops)
+        if ((currentPlayer == 1 && troopCountPlayer1 == maxTroops) ||
+            (currentPlayer == 2 && troopCountPlayer2 == maxTroops))
         {
-            panel.SetActive(false);        // Nasconde il primo pannello
-            secondPanel.SetActive(true);   // Mostra il secondo pannello
-            mazzo.SetActive(true);         // Attiva il mazzo
-            Debug.Log("Pronto! Primo pannello nascosto, secondo pannello e mazzo attivati.");
+            if (currentPlayer == 1)
+            {
+                Debug.Log("Primo giocatore pronto! Passando al secondo giocatore...");
+                currentPlayer = 2;  // Cambio turno
+            }
+            else
+            {
+                panel.SetActive(false);
+                secondPanel.SetActive(true);
+                mazzo.SetActive(true);
+                Debug.Log("Secondo giocatore pronto! Attivando mazzo e interfaccia di gioco.");
+            }
         }
         else
         {
-            Debug.Log("Posiziona tutte le truppe prima di procedere.");
+            Debug.Log($"Giocatore {currentPlayer}: posiziona tutte le truppe prima di procedere.");
         }
     }
 }

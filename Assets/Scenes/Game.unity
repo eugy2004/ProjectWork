@@ -18452,7 +18452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Carta1: {fileID: 8960894345311643908, guid: 235a53cdfa6ed544980a11360e3cfd03, type: 3}
   Carta2: {fileID: 8960894345311643908, guid: eb9d2e1303c3d0e43a4fd941f8492dcf, type: 3}
-  Carta3: {fileID: 6473788420952464604, guid: ee43f3b1ec7790147afb2e0276654c04, type: 3}
+  Carta3: {fileID: 8960894345311643908, guid: 0b50e201921390e4bbb24b3f8321b98e, type: 3}
+  Carta4: {fileID: 8960894345311643908, guid: 5930183267fee64468d1a02785b9b85b, type: 3}
+  Carta5: {fileID: 8960894345311643908, guid: 2dbf6bbc5522c584ca851d50feac90c9, type: 3}
   firstSlotPosition: {x: 9.05, y: -0.83, z: 2.22}
 --- !u!65 &1939329456
 BoxCollider:

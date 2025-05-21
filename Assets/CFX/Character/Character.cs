@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public byte hp, attack, defence;
+    public int hp, attack, defence;
 
     public virtual void Attack(Character target) 
     {

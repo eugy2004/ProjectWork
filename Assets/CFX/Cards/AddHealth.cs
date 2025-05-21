@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-public class Carta1 : MonoBehaviour
+public class AddHealth : MonoBehaviour
 {
     private bool isRaycastActive = false; // Indica se l'evidenziazione è attiva
     private Ray ray;
@@ -95,16 +94,16 @@ public class Carta1 : MonoBehaviour
                     Debug.Log("Capsula trovata sopra il nodo: " + troopOnNode.name);
 
                     // Aumenta l'attacco invece di distruggere la truppa
-                    troopCharacter.attack += 1;
+                    troopCharacter.hp += 10;
                     Debug.Log("Attacco aumentato per " + troopOnNode.name + ". Nuovo valore: " + troopCharacter.attack);
 
                     // Ripristina il colore originale dei nodi adiacenti
                     ResetAdjacentNodeColors(lastHighlightedNode);
 
-                    
+
                     ResetNodeColor();
 
-                    
+
                     Destroy(gameObject);
                 }
                 else

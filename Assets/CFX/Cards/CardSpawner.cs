@@ -6,6 +6,8 @@ public class RandomCardSpawner : MonoBehaviour
     public GameObject Carta1;
     public GameObject Carta2;
     public GameObject Carta3;
+    public GameObject Carta4;
+    public GameObject Carta5;
 
     private GameObject[] carte;
     public Vector3 firstSlotPosition; // Inserita manualmente nell'Inspector
@@ -16,7 +18,7 @@ public class RandomCardSpawner : MonoBehaviour
 
     void Start()
     {
-        carte = new GameObject[] { Carta1, Carta2, Carta3 };
+        carte = new GameObject[] { Carta1, Carta2, Carta3, Carta4, Carta5 };
 
         // Genera le posizioni degli slot basandosi sulla posizione iniziale
         for (int i = 0; i < maxCarte; i++)

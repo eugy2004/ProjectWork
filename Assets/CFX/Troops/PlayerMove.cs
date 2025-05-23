@@ -87,6 +87,7 @@ public class PlayerMove : MonoBehaviour
         {
             case 0:
                 WarriorAttackUpdate();
+                AttackUpdate(rangeWarrior, () => { Debug.Log("debug message"); });
                 break;
             case 1:
                 ArcherAttackUpdate();
@@ -127,7 +128,24 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
+        
+        void AttackUpdate(Vector2 range, System.Action value)
+        {
+            if (Physics.Raycast(ray, out hit, 1000f, layerMaskCharacter) && Input.GetMouseButtonDown(0))
+            {
 
+                GameObject targetTroop = hit.transform.gameObject;
+
+                targetHit = hit;
+
+                if (GetDistanceRayCast(targetHit, gameObject).x < range.x && GetDistanceRayCast(targetHit, gameObject).z < range.y)
+                {
+                    Destroy(targetTroop);
+                    value.Invoke();
+                }
+            }
+        }
+        
         void WizardAttackUpdate()
         {
             if (Physics.Raycast(ray, out hit, 1000f, layerMaskGridnode) && Input.GetMouseButtonDown(0))

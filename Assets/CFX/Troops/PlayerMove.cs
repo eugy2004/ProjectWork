@@ -140,6 +140,10 @@ public class PlayerMove : MonoBehaviour
 
                 if (GetDistanceRayCast(targetHit, gameObject).x < range.x && GetDistanceRayCast(targetHit, gameObject).z < range.y)
                 {
+
+                    
+                    //AttacckingTroop.GetComponent<Troop>.character.Attack(targetTroop.GetComponent<Troop>.character, AttacckingTroop.GetComponent<Troop>.timesAttacked);
+
                     Destroy(targetTroop);
                     value.Invoke();
                 }

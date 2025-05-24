@@ -19,12 +19,16 @@ public class Troop : MonoBehaviour
 
     public Vector3 lastDeployPosition;
 
+    public Character character;
+
     void Start()
     {
         gameManager = Object.FindFirstObjectByType<GameManager>();
         gridNode = Object.FindFirstObjectByType<GridNode>();
         renderer = gameObject.GetComponent<Renderer>();
         collider = gameObject.GetComponent<Collider>();
+
+        character = gameObject.GetComponent<Character>();
 
         AnyDeploying = true;
         isDeploying = true;

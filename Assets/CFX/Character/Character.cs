@@ -4,14 +4,17 @@ public class Character : MonoBehaviour
 {
     public int hp, attack, defence;
 
-    public virtual void Attack(Character target) 
+    public Troop troop;
+
+    public void Awake()
     {
-        // damageManager.ProcessDamage(this, target);
+        troop = GetComponent<Troop>();
     }
 
-    public virtual void Move() 
+    public virtual void Attack(Character target, byte attackNumber) 
     {
-        
+        // damageManager.ProcessDamage(this, target);
+        target.hp = (attack/attackNumber)-target.defence;
     }
 
     public virtual void OnHitSuffered() 
